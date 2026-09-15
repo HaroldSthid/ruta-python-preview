@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía para el Front-end Developer — Ruta Python</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Work Sans', system-ui, sans-serif; background: #FBF8F2; color: #1E2433; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 56px 24px 100px; }
+  h1, h2, h3 { font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.3px; }
+  h1 { font-size: 34px; margin: 0 0 8px; }
+  h2 { font-size: 23px; margin: 56px 0 16px; padding-top: 20px; border-top: 1px solid #E7E1D3; }
+  h3 { font-size: 17px; margin: 28px 0 10px; }
+  p { color: #4B5468; font-size: 15.5px; }
+  a { color: #2F5FA8; }
+  code, .mono { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13.5px; }
+  code { background: #EDE9E3; color: #9A3412; padding: 2px 6px; border-radius: 4px; }
+  pre { background: #1E2433; color: #E7E9EE; padding: 18px 20px; border-radius: 10px; overflow-x: auto; font-size: 13px; line-height: 1.6; }
+  pre code { background: none; color: inherit; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #E7E1D3; vertical-align: top; }
+  th { color: #7C8496; font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .swatch { display: inline-flex; align-items: center; gap: 8px; }
+  .dot { width: 16px; height: 16px; border-radius: 5px; display: inline-block; border: 1px solid rgba(0,0,0,0.08); }
+  .callout { padding: 16px 20px; border-radius: 12px; background: #EAF1FB; border: 1px solid #BBD3EF; font-size: 14.5px; margin: 20px 0; }
+  .callout.warn { background: #FFF6DF; border-color: #F6C445; }
+  .topbar { padding: 14px 24px; background: #1E2433; }
+  .topbar a { color: #D7DCE8; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  ul { color: #4B5468; font-size: 15.5px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="topbar"><a href="index.html">← Volver al mockup</a></div>
+<div class="wrap">
+
+  <h1>Guía para el Front-end Developer</h1>
+  <p>Cómo llevar la propuesta visual de <code>ruta-python-preview</code> al repo real
+  <a href="https://github.com/ivangomezgb/HOJA_RUTA_PYTHON_COLOMBIA" target="_blank" rel="noopener">HOJA_RUTA_PYTHON_COLOMBIA</a>.
+  Esto es una referencia de dirección, no un componente para copiar y pegar tal cual — el sitio actual no usa build step ni frameworks (HTML/CSS/JS vanilla), así que la idea es mantener esa simplicidad.</p>
+
+  <div class="callout">
+    Este mockup es un punto de partida para conversar con <strong>Leo y Angel</strong>, no una decisión cerrada.
+    Todo lo de acá abajo es negociable — lo importante es dejar registrado el razonamiento detrás de cada cambio.
+  </div>
+
+  <h2>1. Qué cambia y qué no</h2>
+  <p>El objetivo es hacer la página más accesible para gente que nunca programó, sin perder la profundidad técnica que ya tiene para quien sigue el track completo. Se toca principalmente:</p>
+  <ul>
+    <li>La paleta de colores y tipografía (tokens de <code>styles.css</code>)</li>
+    <li>El <code>header.hero</code>: pasa de un título + párrafo a un hero con selector de audiencia</li>
+    <li>Las tarjetas de <code>#principios</code> y <code>#ruta</code>: pasan de texto plano a tarjetas con ícono y badges de estado</li>
+    <li>El checklist (<code>#checklist</code>): se agrega una vista de progreso por bloques arriba de la lista existente</li>
+  </ul>
+  <p><strong>No se toca:</strong> <code>#modulos</code> (las fichas técnicas de Fase 3/4), <code>#py5tabla</code>, <code>#docs-oficiales</code>, <code>#practica</code>, <code>#hitos</code> ni la lógica de <code>app.js</code> — son contenido denso para quien ya está en el track, no hace falta "gamificarlos".</p>
+
+  <h2>2. Tokens de color — <code>styles.css</code> <span class="mono">:root</span></h2>
+  <p>Hoy el archivo define esto en las líneas 7–40 aprox. Se puede migrar gradual: agregar los tokens nuevos sin borrar los viejos hasta confirmar que nada más los referencia.</p>
+
+  <table>
+    <tr><th>Token actual</th><th>Valor</th><th>Propuesta</th><th>Valor</th></tr>
+    <tr><td><span class="swatch"><span class="dot" style="background:#f8f7f5"></span><code>--bg</code></span></td><td>#f8f7f5</td><td><code>--bg</code></td><td><span class="swatch"><span class="dot" style="background:#FBF8F2"></span>#FBF8F2</span></td></tr>
+    <tr><td><span class="swatch"><span class="dot" style="background:#2d6a4f"></span><code>--accent</code></span></td><td>#2d6a4f (verde bosque)</td><td><code>--accent-blue</code></td><td><span class="swatch"><span class="dot" style="background:#2F5FA8"></span>#2F5FA8</span></td></tr>
+    <tr><td>—</td><td>nuevo</td><td><code>--accent-yellow</code></td><td><span class="swatch"><span class="dot" style="background:#F6C445"></span>#F6C445</span></td></tr>
+    <tr><td>—</td><td>nuevo</td><td><code>--accent-blue-deep</code></td><td><span class="swatch"><span class="dot" style="background:#1F3E73"></span>#1F3E73</span></td></tr>
+    <tr><td><code>--accent</code> / <code>--accent-2</code></td><td>verde, uso general</td><td><code>--accent-success</code></td><td><span class="swatch"><span class="dot" style="background:#3E8E5B"></span>#3E8E5B — <em>se conserva, pero solo para estados "logrado"</em></span></td></tr>
+    <tr><td><code>--text</code></td><td>#1c1917</td><td><code>--ink</code></td><td><span class="swatch"><span class="dot" style="background:#1E2433"></span>#1E2433</span></td></tr>
+    <tr><td><code>--text-2</code></td><td>#57534e</td><td><code>--ink-soft</code></td><td><span class="swatch"><span class="dot" style="background:#4B5468"></span>#4B5468</span></td></tr>
+    <tr><td><code>--radius</code></td><td>6px</td><td><code>--radius-lg</code></td><td>16–20px en tarjetas de hero/beneficios (más redondeado, más amigable)</td></tr>
+  </table>
+
+  <div class="callout warn">
+    <strong>Ojo con el contraste.</strong> En el mockup usamos <code>#6B6558</code> para texto secundario sobre <code>#FBF8F2</code>
+    (≈5.4:1, pasa WCAG AA). Evitá tonos más claros tipo <code>#9A9384</code> para texto de lectura — dan ~2.9:1 y no pasan el mínimo de accesibilidad. Es una revisión que ya hicimos sobre el mockup, pero vale repetirla en cada color nuevo que se agregue.
+  </div>
+
+  <h2>3. Tipografía</h2>
+  <p>El sitio actual usa la pila del sistema (<code>-apple-system, "Segoe UI", Arial...</code>) — cero dependencias externas, carga instantánea. La propuesta agrega dos fuentes de Google Fonts:</p>
+  <pre><code>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"&gt;</code></pre>
+  <ul>
+    <li><strong>Fredoka</strong> (600/700) — títulos y números de fase. Redondeada, amigable, sin perder legibilidad.</li>
+    <li><strong>Work Sans</strong> (400–700) — reemplaza la pila de sistema para el cuerpo, mantiene buena lectura en bloques largos (fichas de módulo, checklist).</li>
+  </ul>
+  <div class="callout warn">
+    Esto es una dependencia externa nueva en un sitio que hoy no tiene ninguna — vale la pena decidirlo con Leo y Angel explícitamente, no asumirlo. Si se prioriza performance/offline por sobre estética, se puede quedar con la pila de sistema y aplicar el mismo peso/tracking con lo que ya hay.
+  </div>
+
+  <h2>4. Hero — <code>index.html</code> líneas 60–76</h2>
+  <p>Hoy es <code>&lt;h1&gt;Empeza por la guia, no por el repo&lt;/h1&gt;</code> + un párrafo. La propuesta:</p>
+  <ul>
+    <li>Headline más corto y emocional en vez de instruccional</li>
+    <li>Selector binario de audiencia ("Nunca programé antes" / "Ya tengo bases") como primer punto de contacto — cada botón podría anclar a una sección distinta o a un modal de onboarding, a definir con backend/lógica en <code>app.js</code></li>
+    <li>Preview del Playground al costado del hero (hoy está al final, línea 916) — moverlo o duplicarlo arriba como "teaser" que linkee a la sección completa</li>
+  </ul>
+  <p>Ver la estructura completa en <a href="index.html">index.html</a> de este repo (sección <code>#view-desktop</code>) — es HTML/CSS plano, se puede copiar el bloque del hero directo.</p>
+
+  <h2>5. Tarjetas de <code>#ruta</code> — líneas 109–177</h2>
+  <p>Los datos ya existen tal cual en el HTML actual (número de fase, nombre, descripción, horas/semanas/herramienta, badge de estado). Lo que cambia es solo presentación:</p>
+  <ul>
+    <li>Grid de 3 columnas en vez de lista vertical</li>
+    <li>Badge de estado con color según el valor real: <code>Fase previa</code> → verde, <code>Estas aca</code> → amarillo/destacado, <code>Proximo</code> → azul, <code>Por definir</code> → borde punteado gris</li>
+    <li>Ícono por fase (opcional) — el mockup no le puso un ícono distinto a cada fase todavía, es una decisión pendiente</li>
+  </ul>
+
+  <h2>6. Checklist gamificado — <code>#checklist</code>, línea 774</h2>
+  <p><code>app.js</code> ya persiste el progreso en <code>localStorage</code> y expone el contador "X / 70 completados" — la lógica no cambia. Lo que se agrega es una capa visual arriba de la lista existente:</p>
+  <ul>
+    <li>Un contador grande estilo "puntaje" en vez de texto plano</li>
+    <li>Barra de progreso por bloque (Bloque 0, 1, 2…) en vez de solo el número — hace falta que <code>app.js</code> exponga el conteo por bloque, no solo el total; hoy probablemente ya lo tiene internamente ya que cada bloque tiene su propio <code>0 / N</code> en el DOM</li>
+  </ul>
+
+  <h2>7. Íconos</h2>
+  <p>Todo el mockup usa SVG inline (stroke, grilla de 24px, sin emojis) para que escalen y hereden color con <code>currentColor</code>/<code>stroke</code>. Podés copiar los <code>&lt;svg&gt;</code> directo de <code>index.html</code> — no dependen de una librería de íconos externa.</p>
+
+  <h2>8. Responsive</h2>
+  <p>El mockup incluye una vista mobile completa (ver toggle "Vista Mobile" en <a href="index.html">index.html</a>). El sitio actual ya tiene su propio manejo de sidebar responsive (<code>sidebar-fab</code>, <code>sidebar-overlay</code> según <code>DOCUMENTACION.md</code>) — esa lógica de apertura/cierre no debería tocarse, solo el contenido interno de cada sección en breakpoints angostos.</p>
+
+  <h2>Créditos</h2>
+  <p>La ruta y todo su contenido pedagógico son obra de <strong>Leo y Angel</strong>, quienes vienen impulsando el proyecto — este mockup es solo una propuesta de forma, no de fondo.</p>
+
+</div>
+</body>
+</html>
