@@ -7,7 +7,7 @@ para quien sigue el track completo — y heredando la identidad visual real de
 
 Este repo **no reemplaza** el sitio actual ni su contenido pedagógico, ni bifurca la experiencia
 en dos productos separados. Es una sola ruta con un solo punto de llegada — el selector de
-audiencia elige en qué escalón arrancás, no a qué sitio vas. Es un recurso paralelo para alinear
+audiencia elige en qué escalón arrancas, no a qué sitio vas. Es un recurso paralelo para alinear
 dirección visual antes de tocar el código real, en línea con el trabajo que vienen impulsando
 **Leo y Angel** en el proyecto.
 
