@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Short — Tema 1: El lienzo no es una hoja de papel</title>
+<title>Short — Tema 2: Tu código elige un camino</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
 <style>
   * { box-sizing: border-box; }
@@ -43,11 +43,20 @@
   }
   .script .label { display: block; font-style: normal; font-weight: 700; font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: #2FB350; margin-bottom: 6px; }
 
+  .codeblock { display: flex; gap: 14px; margin-top: 4px; flex-wrap: wrap; }
+  .codeblock .col { flex: 1 1 200px; }
+  .codeblock .col .tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .codeblock .col.bad .tag { color: #E24329; }
+  .codeblock .col.good .tag { color: #2FB350; }
+  .codeblock pre { margin: 0; background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; font-family: monospace; font-size: 12.5px; color: #D7E3F5; white-space: pre; }
+  .codeblock .col.bad pre { border-left: 3px solid #E24329; }
+  .codeblock .col.good pre { border-left: 3px solid #2FB350; }
+
   .challenge { margin-top: 44px; padding: 26px; background: #16162E; border: 1px solid rgba(255,212,59,0.35); border-top: 3px solid #FFD43B; }
   .challenge .eyebrow { color: #FFD43B; margin-bottom: 8px; }
   .challenge p { margin: 0 0 14px; font-size: 15px; color: rgba(244,244,245,0.75); }
   .challenge .ex { background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; font-family: monospace; font-size: 13.5px; color: #D7E3F5; }
-  .challenge .ex .c { color: #4B8BBE; } .challenge .ex .s { color: #FFD43B; } .challenge .ex .m { color: rgba(244,244,245,0.45); }
+  .challenge .ex .c { color: #4B8BBE; } .challenge .ex .s { color: #FFD43B; } .challenge .ex .k { color: #5C4EE5; } .challenge .ex .m { color: rgba(244,244,245,0.45); }
 
   .footer-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: rgba(244,244,245,0.5); flex-wrap: wrap; gap: 12px; }
   .next { display: flex; align-items: center; gap: 10px; }
@@ -57,14 +66,16 @@
 <body>
 <div class="topbar">
   <a href="index.html">← Volver al mockup</a>
-  <a href="cheatsheet-tema1.html">Ver cheat sheet de este Tema →</a>
+  <span>
+    <a href="short-tema1.html">← Short anterior (Tema 1)</a>
+  </span>
 </div>
 <div class="wrap">
 
   <div class="head">
-    <div class="eyebrow" style="color: #FFD43B;">Short · Fase 3 — Tema 1: Coordenadas y gráficos</div>
-    <h1>El lienzo no es una hoja de papel</h1>
-    <p>Piloto de formato "Short" (CS50: un video de 5–10 min sobre una sola idea). Esto es el storyboard + guion de locución para grabarlo, más la versión leíble — no reemplaza la clase completa del Tema 1.</p>
+    <div class="eyebrow" style="color: #FFD43B;">Short · Fase 3 — Tema 2: Condicionales if</div>
+    <h1>Tu código elige un camino</h1>
+    <p>Piloto de formato "Short" sobre Tema 2. Storyboard + guion de locución (4 frames, ~4 min) — no reemplaza la clase completa, es lo que se ve antes de entrar a los proyectos P2.A y P2.B.</p>
     <div class="meta">
       <span class="badge dot">~4 min de video</span>
       <span class="badge">1 sola idea</span>
@@ -74,7 +85,7 @@
 
   <div class="one-idea">
     <div class="eyebrow">La idea en una frase</div>
-    <p>En el lienzo, <code>(0,0)</code> está arriba a la izquierda — y a diferencia de la matemática de colegio, bajar en la pantalla significa <em>sumar</em> en Y, no restar.</p>
+    <p>Un <code>if</code> no es una pregunta abstracta — es una bifurcación: según sea Verdadero o Falso, el dibujo que aparece en pantalla es literalmente distinto.</p>
   </div>
 
   <!-- FRAME 1 -->
@@ -82,16 +93,17 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <text x="90" y="74" fill="rgba(244,244,245,0.3)" font-size="12" font-family="monospace" text-anchor="middle">?</text>
+        <circle cx="90" cy="70" r="24" fill="#16162E" stroke="rgba(244,244,245,0.3)" stroke-dasharray="3,3"></circle>
+        <text x="90" y="75" fill="rgba(244,244,245,0.4)" font-size="20" font-family="monospace" text-anchor="middle">?</text>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">1</span><span class="time">0:00 – 0:40</span></div>
-      <h3>El gancho: "¿por qué salió al revés?"</h3>
-      <p>Arranca con el error que casi todos cometen la primera vez: alguien intenta dibujar un punto "arriba" y termina apareciendo abajo del todo.</p>
+      <h3>El gancho: "¿por qué mi color nunca cambiaba?"</h3>
+      <p>Alguien escribe un <code>if</code> para cambiar el color de una forma según una condición — pero el color queda siempre igual, pase lo que pase.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "¿Alguna vez intentaste dibujar algo 'arriba' en Processing y te apareció abajo? No es un error tuyo — el lienzo no funciona como el cuaderno del colegio. Vamos a ver por qué en cuatro minutos."
+        "¿Alguna vez escribiste un 'if' para que algo cambiara de color y no pasaba nada, nunca? El problema casi nunca es la condición — es cómo Python sabe qué parte del código pertenece a cada camino. Vamos a ver eso en cuatro minutos."
       </div>
     </div>
   </div>
@@ -101,44 +113,48 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <line x1="10" y1="10" x2="10" y2="130" stroke="#4B8BBE" stroke-width="1.5"></line>
-        <line x1="10" y1="10" x2="170" y2="10" stroke="#FFD43B" stroke-width="1.5"></line>
-        <circle cx="10" cy="10" r="3" fill="#F4F4F5"></circle>
-        <text x="16" y="22" fill="#F4F4F5" font-size="10" font-family="monospace">(0,0)</text>
-        <text x="150" y="24" fill="#FFD43B" font-size="10" font-family="monospace">x →</text>
-        <text x="16" y="122" fill="#4B8BBE" font-size="10" font-family="monospace">y ↓</text>
+        <polygon points="90,15 115,40 90,65 65,40" fill="#16162E" stroke="#4B8BBE" stroke-width="1.5"></polygon>
+        <text x="90" y="44" fill="#4B8BBE" font-size="9" font-family="monospace" text-anchor="middle">x&gt;90?</text>
+        <line x1="65" y1="40" x2="30" y2="90" stroke="#FFD43B" stroke-width="1.5"></line>
+        <circle cx="30" cy="100" r="12" fill="#FFD43B"></circle>
+        <line x1="115" y1="40" x2="150" y2="90" stroke="#2FB350" stroke-width="1.5"></line>
+        <circle cx="150" cy="100" r="12" fill="#2FB350"></circle>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">2</span><span class="time">0:40 – 1:40</span></div>
-      <h3>La revelación: el origen está arriba-izquierda</h3>
-      <p>Se dibuja el eje en vivo: <code>(0,0)</code> en la esquina superior izquierda, X crece a la derecha, Y crece <strong>hacia abajo</strong>.</p>
+      <h3>La revelación: if / elif / else es una bifurcación</h3>
+      <p>Un diamante de decisión con dos caminos: si la condición es verdadera, un círculo amarillo; si es falsa, uno verde. Nunca los dos a la vez.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "El punto de partida, el (0,0), está en la esquina superior izquierda de la pantalla. El eje X crece hacia la derecha, como siempre. Pero el eje Y crece hacia ABAJO. Al revés de la hoja cuadriculada."
+        "Un if es un cruce de caminos. Si la condición se cumple, el programa va por un lado y dibuja algo. Si no se cumple, va por el otro y dibuja otra cosa. Nunca los dos al mismo tiempo — es uno o el otro."
       </div>
     </div>
   </div>
 
   <!-- FRAME 3 -->
   <div class="frame">
-    <div class="frame-visual">
-      <svg width="180" height="140" viewBox="0 0 180 140">
-        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <circle cx="90" cy="30" r="5" fill="#E24329"></circle>
-        <text x="100" y="34" fill="#E24329" font-size="10" font-family="monospace">y=30</text>
-        <circle cx="90" cy="110" r="5" fill="#2FB350"></circle>
-        <text x="100" y="114" fill="#2FB350" font-size="10" font-family="monospace">y=110</text>
-        <line x1="90" y1="30" x2="90" y2="110" stroke="rgba(244,244,245,0.25)" stroke-dasharray="3,3"></line>
-      </svg>
+    <div class="frame-visual" style="flex-direction: column; align-items: stretch; gap: 10px; padding: 16px;">
+      <div class="codeblock" style="margin: 0;">
+        <div class="col bad">
+          <div class="tag">No funciona</div>
+          <pre><span style="color:#5C4EE5;">if</span> x &gt; <span style="color:#FFD43B;">90</span>:
+<span style="color:#E24329;">fill</span>(<span style="color:#FFD43B;">255</span>,<span style="color:#FFD43B;">0</span>,<span style="color:#FFD43B;">0</span>)</pre>
+        </div>
+        <div class="col good">
+          <div class="tag">Funciona</div>
+          <pre><span style="color:#5C4EE5;">if</span> x &gt; <span style="color:#FFD43B;">90</span>:
+    <span style="color:#4B8BBE;">fill</span>(<span style="color:#FFD43B;">255</span>,<span style="color:#FFD43B;">0</span>,<span style="color:#FFD43B;">0</span>)</pre>
+        </div>
+      </div>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">3</span><span class="time">1:40 – 2:40</span></div>
-      <h3>El truco mental: "Y chico = arriba, Y grande = abajo"</h3>
-      <p>Comparación lado a lado: un punto en <code>y=30</code> (arriba) contra uno en <code>y=110</code> (abajo), en el mismo lienzo.</p>
+      <h3>El truco mental: la sangría ES el camino</h3>
+      <p>Python no usa llaves <code>{ }</code> como otros lenguajes — usa la indentación (los espacios al principio de la línea) para saber qué pertenece a cada rama del <code>if</code>.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "Un truco para no confundirse más: si el número de Y es PEQUEÑO, el punto está arriba. Si es GRANDE, está abajo. No pienses 'sumar es subir' — piensa 'Y pequeño arriba, Y grande abajo' y no te vas a equivocar más."
+        "Acá está la clave: en Python, lo que está más adentro, indentado, es lo que pertenece a esa rama del if. Sin esos espacios al principio de la línea, Python no sabe que ese fill() depende de la condición — y por eso el color nunca cambiaba."
       </div>
     </div>
   </div>
@@ -148,34 +164,37 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <rect x="70" y="20" width="40" height="20" fill="#4B8BBE"></rect>
-        <text x="60" y="15" fill="rgba(244,244,245,0.5)" font-size="9" font-family="monospace">rect(70,20,40,20)</text>
-        <circle cx="90" cy="90" r="18" fill="#FFD43B"></circle>
-        <text x="55" y="115" fill="rgba(244,244,245,0.5)" font-size="9" font-family="monospace">ellipse(90,90,36,36)</text>
+        <line x1="90" y1="1" x2="90" y2="139" stroke="rgba(244,244,245,0.15)"></line>
+        <line x1="1" y1="70" x2="179" y2="70" stroke="rgba(244,244,245,0.15)"></line>
+        <rect x="1" y="1" width="89" height="69" fill="rgba(255,212,59,0.15)"></rect>
+        <rect x="90" y="1" width="89" height="69" fill="rgba(47,179,80,0.15)"></rect>
+        <rect x="1" y="70" width="89" height="69" fill="rgba(75,139,190,0.15)"></rect>
+        <rect x="90" y="70" width="89" height="69" fill="rgba(226,67,41,0.15)"></rect>
+        <circle cx="120" cy="45" r="5" fill="#F4F4F5"></circle>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">4</span><span class="time">2:40 – 3:20</span></div>
-      <h3>Aplicado: dos formas, mismo sistema</h3>
-      <p>Se ubican un <code>rect()</code> arriba y un <code>ellipse()</code> abajo usando las coordenadas ya explicadas — cierra el círculo entre la idea y el código real.</p>
+      <h3>Aplicado: hacia el proyecto de los cuatro cuadrantes</h3>
+      <p>Combinando lo del Tema 1 (coordenadas) con esto: según en qué cuadrante caiga un punto, se elige un color distinto — exactamente lo que van a construir en el proyecto P2.A.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "Miren: este rectángulo está en y=20, arriba. Este círculo está en y=90, más abajo. Mismo sistema que acabamos de ver, ahora con código de verdad."
+        "Uniendo esto con lo que vimos del sistema de coordenadas: si combinamos condiciones sobre X y sobre Y, podemos saber en qué cuadrante del lienzo está un punto — y elegir un color distinto para cada uno. Eso es exactamente el proyecto que viene."
       </div>
     </div>
   </div>
 
   <div class="challenge">
     <div class="eyebrow">Practica esto (30 seg)</div>
-    <p>Antes de pasar al siguiente Tema: dibuja dos puntos, uno que se vea arriba y otro abajo, sin mirar la respuesta.</p>
-    <div class="ex"><span class="c">point</span>(<span class="s">?</span>, <span class="s">?</span>)<span class="m">  # arriba</span><br><span class="c">point</span>(<span class="s">?</span>, <span class="s">?</span>)<span class="m">  # abajo</span></div>
+    <p>Antes de pasar al siguiente Tema: completa este <code>if</code> con la indentación correcta para que <code>fill()</code> pinte de amarillo solo cuando <code>x</code> sea mayor a 200.</p>
+    <div class="ex"><span class="k">if</span> x <span class="m">&gt;</span> <span class="s">200</span>:<span class="m">  # ¿qué falta acá abajo?</span><br><span class="c">fill</span>(<span class="s">255</span>, <span class="s">212</span>, <span class="s">59</span>)</div>
   </div>
 
   <div class="footer-nav">
     <span>Parte del piloto de scaffolding tipo CS50 — <a href="guide.html">ver guía completa</a></span>
     <div class="next">
-      <a href="cheatsheet-tema1.html">Cheat sheet de este Tema →</a>
-      <a href="short-tema2.html">Short: Tema 2 →</a>
+      <a href="short-tema1.html">← Short: Tema 1</a>
+      <span class="soon">Próximo Short: pendiente</span>
     </div>
   </div>
 
