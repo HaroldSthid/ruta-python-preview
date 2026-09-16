@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Short — Tema 2: Tu código elige un camino</title>
+<title>Short — Tema 3: El bucle necesita saber cuándo parar</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
 <style>
   * { box-sizing: border-box; }
@@ -55,7 +55,7 @@
   .challenge { margin-top: 44px; padding: 26px; background: #16162E; border: 1px solid rgba(255,212,59,0.35); border-top: 3px solid #FFD43B; }
   .challenge .eyebrow { color: #FFD43B; margin-bottom: 8px; }
   .challenge p { margin: 0 0 14px; font-size: 15px; color: rgba(244,244,245,0.75); }
-  .challenge .ex { background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; font-family: monospace; font-size: 13.5px; color: #D7E3F5; }
+  .challenge .ex { background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; font-family: monospace; font-size: 13.5px; color: #D7E3F5; white-space: pre; }
   .challenge .ex .c { color: #4B8BBE; } .challenge .ex .s { color: #FFD43B; } .challenge .ex .k { color: #5C4EE5; } .challenge .ex .m { color: rgba(244,244,245,0.45); }
 
   .footer-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: rgba(244,244,245,0.5); flex-wrap: wrap; gap: 12px; }
@@ -67,15 +67,15 @@
 <div class="topbar">
   <a href="index.html">← Volver al mockup</a>
   <span>
-    <a href="short-tema1.html">← Short anterior (Tema 1)</a>
+    <a href="short-tema2.html">← Short anterior (Tema 2)</a>
   </span>
 </div>
 <div class="wrap">
 
   <div class="head">
-    <div class="eyebrow" style="color: #FFD43B;">Short · Fase 3 — Tema 2: Condicionales if</div>
-    <h1>Tu código elige un camino</h1>
-    <p>Piloto de formato "Short" sobre Tema 2. Storyboard + guion de locución (4 frames, ~4 min) — no reemplaza la clase completa, es lo que se ve antes de entrar a los proyectos P2.A y P2.B.</p>
+    <div class="eyebrow" style="color: #FFD43B;">Short · Fase 3 — Tema 3: Bucles for y while</div>
+    <h1>El bucle necesita saber cuándo parar</h1>
+    <p>Piloto de formato "Short" sobre Tema 3. Storyboard + guion de locución (4 frames, ~4 min) — lo que se ve antes de entrar a los proyectos P3.A y P3.B (patrones y mosaico Truchet).</p>
     <div class="meta">
       <span class="badge dot">~4 min de video</span>
       <span class="badge">1 sola idea</span>
@@ -85,7 +85,7 @@
 
   <div class="one-idea">
     <div class="eyebrow">La idea en una frase</div>
-    <p>Un <code>if</code> no es una pregunta abstracta — es una bifurcación: según sea Verdadero o Falso, el dibujo que aparece en pantalla es literalmente distinto.</p>
+    <p>Un bucle repite mientras su condición sea verdadera — si nada dentro del bucle cambia esa condición, nunca se vuelve falsa, y el programa no para nunca.</p>
   </div>
 
   <!-- FRAME 1 -->
@@ -93,17 +93,17 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <circle cx="90" cy="70" r="24" fill="#16162E" stroke="rgba(244,244,245,0.3)" stroke-dasharray="3,3"></circle>
-        <text x="90" y="75" fill="rgba(244,244,245,0.4)" font-size="20" font-family="monospace" text-anchor="middle">?</text>
+        <circle cx="90" cy="70" r="22" fill="none" stroke="#E24329" stroke-width="2" stroke-dasharray="6,4"></circle>
+        <text x="90" y="76" fill="#E24329" font-size="12" font-family="monospace" text-anchor="middle">...</text>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">1</span><span class="time">0:00 – 0:40</span></div>
-      <h3>El gancho: "¿por qué mi color nunca cambiaba?"</h3>
-      <p>Alguien escribe un <code>if</code> para cambiar el color de una forma según una condición — pero el color queda siempre igual, pase lo que pase.</p>
+      <h3>El gancho: "¿por qué se me colgó Colab?"</h3>
+      <p>Alguien corre una celda con un <code>while</code> y el entorno se queda pensando para siempre — hay que interrumpir la ejecución a mano.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "¿Alguna vez escribiste un 'if' para que algo cambiara de color y no pasaba nada, nunca? El problema casi nunca es la condición — es cómo Python sabe qué parte del código pertenece a cada camino. Vamos a ver eso en cuatro minutos."
+        "¿Alguna vez corriste una celda y Colab se quedó pensando para siempre, sin terminar nunca? No está roto tu código de forma misteriosa — le diste a un bucle una condición que nunca se vuelve falsa. Vamos a ver por qué pasa esto y cómo evitarlo."
       </div>
     </div>
   </div>
@@ -113,21 +113,22 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <polygon points="90,15 115,40 90,65 65,40" fill="#16162E" stroke="#4B8BBE" stroke-width="1.5"></polygon>
-        <text x="90" y="44" fill="#4B8BBE" font-size="9" font-family="monospace" text-anchor="middle">x&gt;90?</text>
-        <line x1="65" y1="40" x2="30" y2="90" stroke="#FFD43B" stroke-width="1.5"></line>
-        <circle cx="30" cy="100" r="12" fill="#FFD43B"></circle>
-        <line x1="115" y1="40" x2="150" y2="90" stroke="#2FB350" stroke-width="1.5"></line>
-        <circle cx="150" cy="100" r="12" fill="#2FB350"></circle>
+        <polygon points="90,20 115,45 90,70 65,45" fill="none" stroke="#4B8BBE" stroke-width="1.5"></polygon>
+        <text x="90" y="49" fill="#4B8BBE" font-size="8" font-family="monospace" text-anchor="middle">i&lt;5?</text>
+        <line x1="90" y1="70" x2="90" y2="95" stroke="#FFD43B" stroke-width="1.5"></line>
+        <rect x="65" y="95" width="50" height="20" fill="none" stroke="#FFD43B" stroke-width="1.5"></rect>
+        <text x="90" y="108" fill="#FFD43B" font-size="8" font-family="monospace" text-anchor="middle">dibujar</text>
+        <path d="M 65 105 C 20 105, 20 45, 65 45" fill="none" stroke="#2FB350" stroke-width="1.5" marker-end="url(#arrow)"></path>
+        <defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2FB350"></path></marker></defs>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">2</span><span class="time">0:40 – 1:40</span></div>
-      <h3>La revelación: if / elif / else es una bifurcación</h3>
-      <p>Un diamante de decisión con dos caminos: si la condición es verdadera, un círculo amarillo; si es falsa, uno verde. Nunca los dos a la vez.</p>
+      <h3>La revelación: revisa, dibuja, vuelve a revisar</h3>
+      <p>Antes de cada vuelta, el bucle pregunta "¿la condición sigue siendo verdadera?" — si sí, ejecuta el bloque y vuelve a preguntar. Es un círculo, no una línea recta.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "Un if es un cruce de caminos. Si la condición se cumple, el programa va por un lado y dibuja algo. Si no se cumple, va por el otro y dibuja otra cosa. Nunca los dos al mismo tiempo — es uno o el otro."
+        "Un while funciona así: antes de cada vuelta, revisa la condición. Si es verdadera, ejecuta lo de adentro y vuelve a revisar. Si en algún momento la condición se vuelve falsa, el círculo se rompe y el programa sigue. El problema es cuando ese círculo nunca se rompe."
       </div>
     </div>
   </div>
@@ -137,24 +138,27 @@
     <div class="frame-visual" style="flex-direction: column; align-items: stretch; gap: 10px; padding: 16px;">
       <div class="codeblock" style="margin: 0;">
         <div class="col bad">
-          <div class="tag">No funciona</div>
-          <pre><span style="color:#5C4EE5;">if</span> x &gt; <span style="color:#FFD43B;">90</span>:
-<span style="color:#E24329;">fill</span>(<span style="color:#FFD43B;">255</span>,<span style="color:#FFD43B;">0</span>,<span style="color:#FFD43B;">0</span>)</pre>
+          <div class="tag">Infinito</div>
+          <pre>i = <span style="color:#FFD43B;">0</span>
+<span style="color:#5C4EE5;">while</span> i &lt; <span style="color:#FFD43B;">5</span>:
+    ellipse(i*<span style="color:#FFD43B;">20</span>,<span style="color:#FFD43B;">50</span>,<span style="color:#FFD43B;">15</span>,<span style="color:#FFD43B;">15</span>)</pre>
         </div>
         <div class="col good">
-          <div class="tag">Funciona</div>
-          <pre><span style="color:#5C4EE5;">if</span> x &gt; <span style="color:#FFD43B;">90</span>:
-    <span style="color:#4B8BBE;">fill</span>(<span style="color:#FFD43B;">255</span>,<span style="color:#FFD43B;">0</span>,<span style="color:#FFD43B;">0</span>)</pre>
+          <div class="tag">Termina</div>
+          <pre>i = <span style="color:#FFD43B;">0</span>
+<span style="color:#5C4EE5;">while</span> i &lt; <span style="color:#FFD43B;">5</span>:
+    ellipse(i*<span style="color:#FFD43B;">20</span>,<span style="color:#FFD43B;">50</span>,<span style="color:#FFD43B;">15</span>,<span style="color:#FFD43B;">15</span>)
+    i += <span style="color:#FFD43B;">1</span></pre>
         </div>
       </div>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">3</span><span class="time">1:40 – 2:40</span></div>
-      <h3>El truco mental: la sangría ES el camino</h3>
-      <p>Python no usa llaves <code>{ }</code> como otros lenguajes — usa la indentación (los espacios al principio de la línea) para saber qué pertenece a cada rama del <code>if</code>.</p>
+      <h3>El truco mental: algo adentro tiene que mover la condición</h3>
+      <p>A la izquierda, <code>i</code> nunca cambia — la condición <code>i &lt; 5</code> es verdadera para siempre. A la derecha, <code>i += 1</code> acerca la condición a ser falsa en cada vuelta.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "Acá está la clave: en Python, lo que está más adentro, indentado, es lo que pertenece a esa rama del if. Sin esos espacios al principio de la línea, Python no sabe que ese fill() depende de la condición — y por eso el color nunca cambiaba."
+        "Miren la diferencia: en el código de la izquierda, i nunca cambia, así que i menor que 5 va a ser verdad para siempre. A la derecha, agregamos i += 1 dentro del bucle — cada vuelta acerca un poco más la condición a hacerse falsa. Esa línea es la que faltaba."
       </div>
     </div>
   </div>
@@ -164,37 +168,38 @@
     <div class="frame-visual">
       <svg width="180" height="140" viewBox="0 0 180 140">
         <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
-        <line x1="90" y1="1" x2="90" y2="139" stroke="rgba(244,244,245,0.15)"></line>
-        <line x1="1" y1="70" x2="179" y2="70" stroke="rgba(244,244,245,0.15)"></line>
-        <rect x="1" y="1" width="89" height="69" fill="rgba(255,212,59,0.15)"></rect>
-        <rect x="90" y="1" width="89" height="69" fill="rgba(47,179,80,0.15)"></rect>
-        <rect x="1" y="70" width="89" height="69" fill="rgba(75,139,190,0.15)"></rect>
-        <rect x="90" y="70" width="89" height="69" fill="rgba(226,67,41,0.15)"></rect>
-        <circle cx="120" cy="45" r="5" fill="#F4F4F5"></circle>
+        <circle cx="30" cy="70" r="10" fill="#FFD43B"></circle>
+        <circle cx="60" cy="70" r="10" fill="#FFD43B"></circle>
+        <circle cx="90" cy="70" r="10" fill="#FFD43B"></circle>
+        <circle cx="120" cy="70" r="10" fill="#FFD43B"></circle>
+        <circle cx="150" cy="70" r="10" fill="#FFD43B"></circle>
+        <text x="90" y="105" fill="rgba(244,244,245,0.5)" font-size="9" font-family="monospace" text-anchor="middle">for i in range(5)</text>
       </svg>
     </div>
     <div class="frame-body">
       <div class="frame-tag"><span class="num">4</span><span class="time">2:40 – 3:20</span></div>
-      <h3>Aplicado: hacia el proyecto de los cuatro cuadrantes</h3>
-      <p>Combinando lo del Tema 1 (coordenadas) con esto: según en qué cuadrante caiga un punto, se elige un color distinto — exactamente lo que van a construir en el proyecto P2.A.</p>
+      <h3>Aplicado: <code>for</code> ya trae el freno incorporado</h3>
+      <p><code>for i in range(5)</code> dibuja esta fila de círculos sin que nadie tenga que acordarse de actualizar nada — <code>range()</code> ya define cuándo parar. Por eso en Tema 3 casi todo arranca con <code>for</code>, y el <code>while</code> queda para cuando de verdad no se sabe de antemano cuántas vueltas hacen falta.</p>
       <div class="script">
         <span class="label">Guion de locución</span>
-        "Uniendo esto con lo que vimos del sistema de coordenadas: si combinamos condiciones sobre X y sobre Y, podemos saber en qué cuadrante del lienzo está un punto — y elegir un color distinto para cada uno. Eso es exactamente el proyecto que viene."
+        "Por esto for suele ser más seguro que while: range(5) ya trae el freno incorporado, nadie se puede olvidar de actualizarlo. Esta fila de cinco círculos es el primer paso hacia los patrones y el mosaico Truchet que vienen — ahí van a anidar bucles como este, fila adentro de columna, para llenar toda una grilla."
       </div>
     </div>
   </div>
 
   <div class="challenge">
     <div class="eyebrow">Practica esto (30 seg)</div>
-    <p>Antes de pasar al siguiente Tema: completa este <code>if</code> con la indentación correcta para que <code>fill()</code> pinte de amarillo solo cuando <code>x</code> sea mayor a 200.</p>
-    <div class="ex"><span class="k">if</span> x <span class="m">&gt;</span> <span class="s">200</span>:<span class="m">  # ¿qué falta acá abajo?</span><br><span class="c">fill</span>(<span class="s">255</span>, <span class="s">212</span>, <span class="s">59</span>)</div>
+    <p>Este <code>while</code> nunca termina. ¿Qué línea falta agregar, y dónde, para que dibuje exactamente 5 círculos y pare?</p>
+    <div class="ex">i = <span class="s">0</span>
+<span class="k">while</span> i &lt; <span class="s">5</span>:
+    <span class="c">ellipse</span>(i*<span class="s">30</span>, <span class="s">50</span>, <span class="s">20</span>, <span class="s">20</span>)<span class="m">  # falta algo acá</span></div>
   </div>
 
   <div class="footer-nav">
     <span>Parte del piloto de scaffolding tipo CS50 — <a href="guide.html">ver guía completa</a></span>
     <div class="next">
-      <a href="short-tema1.html">← Short: Tema 1</a>
-      <a href="short-tema3.html">Short: Tema 3 →</a>
+      <a href="short-tema2.html">← Short: Tema 2</a>
+      <span class="soon">Próximo Short: pendiente</span>
     </div>
   </div>
 
