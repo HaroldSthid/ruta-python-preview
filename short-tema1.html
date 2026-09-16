@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Short — Tema 1: El lienzo no es una hoja de papel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Titillium Web', system-ui, sans-serif; background: #050509; color: #F4F4F5; line-height: 1.5; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 100px; }
+  a { color: #4B8BBE; }
+  code { font-family: 'SFMono-Regular', Consolas, monospace; background: #16162E; color: #FFD43B; padding: 2px 6px; border: 1px solid rgba(255,255,255,0.08); font-size: 13px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 11.5px; }
+
+  .topbar { padding: 14px 24px; background: #0D0D1A; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .topbar a { color: rgba(244,244,245,0.75); font-size: 12.5px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+
+  .head { padding: 44px 0 28px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 36px; }
+  .head h1 { margin: 10px 0 10px; font-size: 30px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF; max-width: 640px; }
+  .head p { margin: 0; color: rgba(244,244,245,0.6); font-size: 14.5px; max-width: 560px; }
+  .meta { display: flex; gap: 14px; margin-top: 16px; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; background: #16162E; border: 1px solid rgba(255,255,255,0.12); color: rgba(244,244,245,0.75); }
+  .badge.dot::before { content: ''; width: 6px; height: 6px; background: #FFD43B; display: inline-block; }
+
+  .one-idea { padding: 22px 26px; background: rgba(75,139,190,0.08); border: 1px solid rgba(75,139,190,0.3); border-left: 3px solid #4B8BBE; margin-bottom: 40px; }
+  .one-idea .eyebrow { color: #4B8BBE; margin-bottom: 8px; }
+  .one-idea p { margin: 0; font-size: 19px; font-weight: 700; color: #FFFFFF; line-height: 1.4; }
+
+  .frame { display: flex; gap: 28px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); align-items: flex-start; flex-wrap: wrap; }
+  .frame:last-of-type { border-bottom: none; }
+  .frame-visual { flex: 0 0 260px; background: #16162E; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; padding: 20px; min-height: 180px; }
+  .frame-body { flex: 1 1 380px; }
+  .frame-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .frame-tag .num { width: 26px; height: 26px; background: #FFD43B; color: #0D0D1A; font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .frame-tag .time { font-size: 12px; color: rgba(244,244,245,0.45); font-family: monospace; }
+  .frame-body h3 { margin: 0 0 10px; font-size: 18px; font-weight: 700; color: #FFFFFF; }
+  .frame-body p { margin: 0 0 12px; font-size: 14.5px; color: rgba(244,244,245,0.7); }
+
+  .script {
+    background: #0D0D1A; border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid #2FB350;
+    padding: 12px 16px; font-size: 13.5px; color: rgba(244,244,245,0.85); font-style: italic;
+  }
+  .script .label { display: block; font-style: normal; font-weight: 700; font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: #2FB350; margin-bottom: 6px; }
+
+  .challenge { margin-top: 44px; padding: 26px; background: #16162E; border: 1px solid rgba(255,212,59,0.35); border-top: 3px solid #FFD43B; }
+  .challenge .eyebrow { color: #FFD43B; margin-bottom: 8px; }
+  .challenge p { margin: 0 0 14px; font-size: 15px; color: rgba(244,244,245,0.75); }
+  .challenge .ex { background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; font-family: monospace; font-size: 13.5px; color: #D7E3F5; }
+  .challenge .ex .c { color: #4B8BBE; } .challenge .ex .s { color: #FFD43B; } .challenge .ex .m { color: rgba(244,244,245,0.45); }
+
+  .footer-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: rgba(244,244,245,0.5); flex-wrap: wrap; gap: 12px; }
+  .next { display: flex; align-items: center; gap: 10px; }
+  .next .soon { padding: 6px 12px; border: 1px dashed rgba(255,255,255,0.2); font-size: 12px; color: rgba(244,244,245,0.35); }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Volver al mockup</a>
+  <a href="cheatsheet-tema1.html">Ver cheat sheet de este Tema →</a>
+</div>
+<div class="wrap">
+
+  <div class="head">
+    <div class="eyebrow" style="color: #FFD43B;">Short · Fase 3 — Tema 1: Coordenadas y gráficos</div>
+    <h1>El lienzo no es una hoja de papel</h1>
+    <p>Piloto de formato "Short" (CS50: un video de 5–10 min sobre una sola idea). Esto es el storyboard + guion de locución para grabarlo, más la versión leíble — no reemplaza la clase completa del Tema 1.</p>
+    <div class="meta">
+      <span class="badge dot">~4 min de video</span>
+      <span class="badge">1 sola idea</span>
+      <span class="badge">Antes de tocar código</span>
+    </div>
+  </div>
+
+  <div class="one-idea">
+    <div class="eyebrow">La idea en una frase</div>
+    <p>En el lienzo, <code>(0,0)</code> está arriba a la izquierda — y a diferencia de la matemática de colegio, bajar en la pantalla significa <em>sumar</em> en Y, no restar.</p>
+  </div>
+
+  <!-- FRAME 1 -->
+  <div class="frame">
+    <div class="frame-visual">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
+        <text x="90" y="74" fill="rgba(244,244,245,0.3)" font-size="12" font-family="monospace" text-anchor="middle">?</text>
+      </svg>
+    </div>
+    <div class="frame-body">
+      <div class="frame-tag"><span class="num">1</span><span class="time">0:00 – 0:40</span></div>
+      <h3>El gancho: "¿por qué salió al revés?"</h3>
+      <p>Arranca con el error que casi todos cometen la primera vez: alguien intenta dibujar un punto "arriba" y termina apareciendo abajo del todo.</p>
+      <div class="script">
+        <span class="label">Guion de locución</span>
+        "Che, ¿alguna vez intentaste dibujar algo 'arriba' en Processing y te apareció abajo? No estás roto — el lienzo no funciona como el cuaderno del colegio. Vamos a ver por qué en cuatro minutos."
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAME 2 -->
+  <div class="frame">
+    <div class="frame-visual">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
+        <line x1="10" y1="10" x2="10" y2="130" stroke="#4B8BBE" stroke-width="1.5"></line>
+        <line x1="10" y1="10" x2="170" y2="10" stroke="#FFD43B" stroke-width="1.5"></line>
+        <circle cx="10" cy="10" r="3" fill="#F4F4F5"></circle>
+        <text x="16" y="22" fill="#F4F4F5" font-size="10" font-family="monospace">(0,0)</text>
+        <text x="150" y="24" fill="#FFD43B" font-size="10" font-family="monospace">x →</text>
+        <text x="16" y="122" fill="#4B8BBE" font-size="10" font-family="monospace">y ↓</text>
+      </svg>
+    </div>
+    <div class="frame-body">
+      <div class="frame-tag"><span class="num">2</span><span class="time">0:40 – 1:40</span></div>
+      <h3>La revelación: el origen está arriba-izquierda</h3>
+      <p>Se dibuja el eje en vivo: <code>(0,0)</code> en la esquina superior izquierda, X crece a la derecha, Y crece <strong>hacia abajo</strong>.</p>
+      <div class="script">
+        <span class="label">Guion de locución</span>
+        "El punto de partida, el (0,0), está en la esquina de arriba a la izquierda de tu pantalla. El eje X crece para la derecha, como siempre. Pero el eje Y crece para ABAJO. Al revés de la hoja cuadriculada."
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAME 3 -->
+  <div class="frame">
+    <div class="frame-visual">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
+        <circle cx="90" cy="30" r="5" fill="#E24329"></circle>
+        <text x="100" y="34" fill="#E24329" font-size="10" font-family="monospace">y=30</text>
+        <circle cx="90" cy="110" r="5" fill="#2FB350"></circle>
+        <text x="100" y="114" fill="#2FB350" font-size="10" font-family="monospace">y=110</text>
+        <line x1="90" y1="30" x2="90" y2="110" stroke="rgba(244,244,245,0.25)" stroke-dasharray="3,3"></line>
+      </svg>
+    </div>
+    <div class="frame-body">
+      <div class="frame-tag"><span class="num">3</span><span class="time">1:40 – 2:40</span></div>
+      <h3>El truco mental: "Y chico = arriba, Y grande = abajo"</h3>
+      <p>Comparación lado a lado: un punto en <code>y=30</code> (arriba) contra uno en <code>y=110</code> (abajo), en el mismo lienzo.</p>
+      <div class="script">
+        <span class="label">Guion de locución</span>
+        "Truco para no confundirte más: si el número de Y es CHICO, el punto está arriba. Si es GRANDE, está abajo. No pienses 'sumar es subir' — pensá 'Y chico arriba, Y grande abajo' y no te vas a equivocar más."
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAME 4 -->
+  <div class="frame">
+    <div class="frame-visual">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
+        <rect x="70" y="20" width="40" height="20" fill="#4B8BBE"></rect>
+        <text x="60" y="15" fill="rgba(244,244,245,0.5)" font-size="9" font-family="monospace">rect(70,20,40,20)</text>
+        <circle cx="90" cy="90" r="18" fill="#FFD43B"></circle>
+        <text x="55" y="115" fill="rgba(244,244,245,0.5)" font-size="9" font-family="monospace">ellipse(90,90,36,36)</text>
+      </svg>
+    </div>
+    <div class="frame-body">
+      <div class="frame-tag"><span class="num">4</span><span class="time">2:40 – 3:20</span></div>
+      <h3>Aplicado: dos formas, mismo sistema</h3>
+      <p>Se ubican un <code>rect()</code> arriba y un <code>ellipse()</code> abajo usando las coordenadas ya explicadas — cierra el círculo entre la idea y el código real.</p>
+      <div class="script">
+        <span class="label">Guion de locución</span>
+        "Miren: este rectángulo está en y=20, arriba. Este círculo está en y=90, más abajo. Mismo sistema que acabamos de ver, ahora con código de verdad."
+      </div>
+    </div>
+  </div>
+
+  <div class="challenge">
+    <div class="eyebrow">Probalo vos (30 seg)</div>
+    <p>Antes de pasar al siguiente Tema: dibujá dos puntos, uno que se vea arriba y otro abajo, sin mirar la respuesta.</p>
+    <div class="ex"><span class="c">point</span>(<span class="s">?</span>, <span class="s">?</span>)<span class="m">  # arriba</span><br><span class="c">point</span>(<span class="s">?</span>, <span class="s">?</span>)<span class="m">  # abajo</span></div>
+  </div>
+
+  <div class="footer-nav">
+    <span>Parte del piloto de scaffolding tipo CS50 — <a href="guide.html">ver guía completa</a></span>
+    <div class="next">
+      <a href="cheatsheet-tema1.html">Cheat sheet de este Tema →</a>
+      <span class="soon">Próximo Short: pendiente</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
