@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat Sheet — Tema 1: Coordenadas y gráficos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Titillium Web', system-ui, sans-serif; background: #050509; color: #F4F4F5; line-height: 1.5; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 100px; }
+  a { color: #4B8BBE; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 11.5px; }
+  code { font-family: 'SFMono-Regular', Consolas, monospace; }
+
+  .topbar { padding: 14px 24px; background: #0D0D1A; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .topbar a { color: rgba(244,244,245,0.75); font-size: 12.5px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+
+  .head {
+    padding: 44px 0 32px; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px;
+  }
+  .head h1 { margin: 10px 0 6px; font-size: 30px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF; }
+  .head p { margin: 0; color: rgba(244,244,245,0.6); font-size: 14.5px; max-width: 560px; }
+  .meta { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; text-align: right; }
+  .badge { display: inline-block; padding: 5px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: #FFD43B; color: #0D0D1A; }
+  .tool { font-size: 12.5px; color: rgba(244,244,245,0.5); }
+
+  .section { margin-bottom: 40px; }
+  .section h2 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px;
+    color: #4B8BBE; margin: 0 0 16px;
+  }
+  .section h2 .n { width: 22px; height: 22px; background: rgba(75,139,190,0.15); color: #4B8BBE; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+
+  .canvas-diagram { display: flex; gap: 28px; align-items: center; padding: 20px; background: #16162E; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 16px; flex-wrap: wrap; }
+  .canvas-diagram p { margin: 0; font-size: 14px; color: rgba(244,244,245,0.7); flex: 1 1 260px; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+  .grid.cols-1 { grid-template-columns: 1fr; }
+  .card { background: #16162E; padding: 18px 20px; }
+  .card .sig { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 14px; color: #FFD43B; margin-bottom: 6px; }
+  .card .desc { font-size: 13.5px; color: rgba(244,244,245,0.65); }
+  .card .ex { margin-top: 10px; background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 12.5px; color: #D7E3F5; }
+  .card .ex .c { color: #4B8BBE; }
+  .card .ex .s { color: #FFD43B; }
+  .card .ex .m { color: rgba(244,244,245,0.45); }
+
+  .snake-warn {
+    display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px;
+    background: rgba(255,212,59,0.08); border: 1px solid rgba(255,212,59,0.3); border-left: 3px solid #FFD43B;
+    font-size: 13px; color: rgba(244,244,245,0.8); margin-top: 12px;
+  }
+
+  .equiv-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13.5px; }
+  .equiv-row:last-child { border-bottom: none; }
+  .equiv-row .old { color: rgba(244,244,245,0.4); text-decoration: line-through; font-family: monospace; }
+  .equiv-row .new { color: #FFD43B; font-family: monospace; font-weight: 600; }
+  .equiv-row .arrow { color: rgba(244,244,245,0.3); }
+
+  .identical { padding: 16px 20px; background: rgba(47,179,80,0.08); border: 1px solid rgba(47,179,80,0.3); }
+  .identical .list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .identical .list code { background: #16162E; color: #2FB350; padding: 3px 9px; font-size: 12.5px; border: 1px solid rgba(47,179,80,0.25); }
+
+  .footer-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: rgba(244,244,245,0.5); flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+<div class="topbar"><a href="index.html">← Volver al mockup</a></div>
+<div class="wrap">
+
+  <div class="head">
+    <div>
+      <div class="eyebrow" style="color: #FFD43B;">Fase 3 · Programación Visual y Creativa</div>
+      <h1>Coordenadas y gráficos</h1>
+      <p>Tema 1 — lo que necesitás tener a mano mientras programás, no la clase completa. Esto es un piloto de formato, no reemplaza la ficha del módulo.</p>
+    </div>
+    <div class="meta">
+      <span class="badge">8 h · 3T / 5P</span>
+      <span class="tool">Google Colab + py5</span>
+      <span class="tool">Learn Python Visually — caps. 1, 2 y 3</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">1</span>El lienzo como sistema cartesiano</h2>
+    <div class="canvas-diagram">
+      <svg width="180" height="140" viewBox="0 0 180 140">
+        <rect x="1" y="1" width="178" height="138" fill="#0D0D1A" stroke="rgba(255,255,255,0.15)"></rect>
+        <line x1="10" y1="10" x2="10" y2="130" stroke="#4B8BBE" stroke-width="1.5"></line>
+        <line x1="10" y1="10" x2="170" y2="10" stroke="#FFD43B" stroke-width="1.5"></line>
+        <circle cx="10" cy="10" r="3" fill="#F4F4F5"></circle>
+        <text x="16" y="22" fill="#F4F4F5" font-size="10" font-family="monospace">(0,0)</text>
+        <text x="150" y="24" fill="#FFD43B" font-size="10" font-family="monospace">x →</text>
+        <text x="16" y="122" fill="#4B8BBE" font-size="10" font-family="monospace">y ↓</text>
+        <circle cx="120" cy="90" r="5" fill="#2FB350"></circle>
+        <text x="128" y="94" fill="#2FB350" font-size="10" font-family="monospace">(120,90)</text>
+      </svg>
+      <p>El origen <code>(0,0)</code> está en la esquina <strong>superior izquierda</strong>, no en el centro ni abajo. El eje X crece hacia la derecha, el eje Y crece hacia <strong>abajo</strong> — al revés de lo que enseña la matemática de colegio. Este es el error mental más común del Tema 1.</p>
+    </div>
+    <div class="grid cols-1">
+      <div class="card">
+        <div class="sig">size(width, height)</div>
+        <div class="desc">Define el tamaño del lienzo en píxeles. Se llama una sola vez, al principio del sketch.</div>
+        <div class="ex"><span class="c">size</span>(<span class="s">400</span>, <span class="s">300</span>)<span class="m">  # lienzo de 400×300 px</span></div>
+      </div>
+      <div class="card">
+        <div class="sig">width · height</div>
+        <div class="desc">Variables de solo lectura con el ancho/alto actual del lienzo — útiles para centrar o escalar sin hardcodear números.</div>
+        <div class="ex"><span class="c">point</span>(width <span class="m">/</span> <span class="s">2</span>, height <span class="m">/</span> <span class="s">2</span>)<span class="m">  # punto en el centro</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">2</span>Primitivas 2D</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="sig">point(x, y)</div>
+        <div class="desc">Un solo píxel visible en esa coordenada.</div>
+        <div class="ex"><span class="c">point</span>(<span class="s">50</span>, <span class="s">50</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">line(x1, y1, x2, y2)</div>
+        <div class="desc">Segmento recto entre dos puntos.</div>
+        <div class="ex"><span class="c">line</span>(<span class="s">0</span>, <span class="s">0</span>, <span class="s">100</span>, <span class="s">100</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">rect(x, y, w, h)</div>
+        <div class="desc">Rectángulo — <code>(x,y)</code> es la esquina superior izquierda por defecto.</div>
+        <div class="ex"><span class="c">rect</span>(<span class="s">20</span>, <span class="s">20</span>, <span class="s">80</span>, <span class="s">40</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">ellipse(x, y, w, h)</div>
+        <div class="desc">Elipse/círculo — <code>(x,y)</code> es el <strong>centro</strong>, no una esquina (distinto de <code>rect</code>).</div>
+        <div class="ex"><span class="c">ellipse</span>(<span class="s">50</span>, <span class="s">50</span>, <span class="s">30</span>, <span class="s">30</span>)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">3</span>Color y estilo</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="sig">fill(r, g, b) · fill("#RRGGBB")</div>
+        <div class="desc">Color de relleno para lo que se dibuje después. RGB, HSB (según <code>color_mode</code>) o hexadecimal.</div>
+        <div class="ex"><span class="c">fill</span>(<span class="s">255</span>, <span class="s">100</span>, <span class="s">0</span>)<span class="m">  # naranja</span></div>
+      </div>
+      <div class="card">
+        <div class="sig">stroke(r, g, b) · no_stroke()</div>
+        <div class="desc">Color del borde/línea. <code>no_stroke()</code> lo saca — útil para formas planas sin contorno.</div>
+        <div class="ex"><span class="c">stroke</span>(<span class="s">0</span>)<span class="m">  # negro</span></div>
+      </div>
+      <div class="card">
+        <div class="sig">background(r, g, b)</div>
+        <div class="desc">Pinta todo el lienzo — normalmente la primera línea de <code>draw()</code> para limpiar el frame anterior.</div>
+        <div class="ex"><span class="c">background</span>(<span class="s">245</span>, <span class="s">245</span>, <span class="s">245</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">no_fill()</div>
+        <div class="desc">Formas sin relleno, solo contorno — snake_case, ver aviso abajo.</div>
+        <div class="ex"><span class="c">no_fill</span>()</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">4</span>Formas complejas</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="sig">curve(...) · bezier(...)</div>
+        <div class="desc">Curvas suaves con puntos de control. Sintaxis idéntica a Processing.</div>
+        <div class="ex"><span class="c">bezier</span>(<span class="s">10</span>,<span class="s">10</span>, <span class="s">40</span>,<span class="s">5</span>, <span class="s">60</span>,<span class="s">80</span>, <span class="s">90</span>,<span class="s">90</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">begin_shape() / vertex(x,y) / end_shape()</div>
+        <div class="desc">Polígonos a medida, punto por punto.</div>
+        <div class="ex"><span class="c">begin_shape</span>()<br><span class="c">vertex</span>(<span class="s">0</span>,<span class="s">0</span>)<br><span class="c">end_shape</span>()</div>
+      </div>
+    </div>
+    <div class="snake-warn">
+      ⚠ <code>beginShape()</code> / <code>endShape()</code> del libro <em>Learn Python Visually</em> son <code>begin_shape()</code> / <code>end_shape()</code> en py5. <code>vertex()</code> queda igual (es una sola palabra). Ver tabla completa de equivalencias en <code>#py5tabla</code>.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">5</span>Texto como elemento gráfico</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="sig">text(contenido, x, y)</div>
+        <div class="desc">Dibuja texto — es una forma gráfica más, no un elemento de UI.</div>
+        <div class="ex"><span class="c">text</span>(<span class="s">"Hola"</span>, <span class="s">20</span>, <span class="s">30</span>)</div>
+      </div>
+      <div class="card">
+        <div class="sig">text_size(s) · text_align(a)</div>
+        <div class="desc">Tamaño y alineación — snake_case en py5 (<code>textSize</code>/<code>textAlign</code> en el libro).</div>
+        <div class="ex"><span class="c">text_size</span>(<span class="s">24</span>)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="n">✓</span>Idénticas en Processing y py5 — no hace falta traducir</h2>
+    <div class="identical">
+      Estas ya las usaste arriba tal cual — no tienen versión snake_case distinta:
+      <div class="list">
+        <code>size()</code><code>point()</code><code>line()</code><code>rect()</code><code>ellipse()</code>
+        <code>fill()</code><code>stroke()</code><code>background()</code><code>curve()</code><code>bezier()</code>
+        <code>vertex()</code><code>text()</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span>Referencia completa: <code>#py5tabla</code> en la ruta · Learn Python Visually, caps. 1–3</span>
+    <a href="index.html">← Volver al mockup</a>
+  </div>
+
+</div>
+</body>
+</html>
