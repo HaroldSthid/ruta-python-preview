@@ -1,12 +1,15 @@
 # Ruta Python — Mockup de referencia
 
 Propuesta visual para hacer la [Hoja de Ruta Python — Colombia](https://ivangomezgb.github.io/HOJA_RUTA_PYTHON_COLOMBIA/)
-más divertida y accesible para personas sin experiencia técnica, manteniendo la profundidad
-que ya tiene para quien sigue el track completo.
+más accesible para personas sin experiencia técnica, manteniendo la profundidad que ya tiene
+para quien sigue el track completo — y heredando la identidad visual real de
+[python.org.co](https://python.org.co/), porque esta ruta va a estar vinculada al sitio oficial.
 
-Este repo **no reemplaza** el sitio actual ni su contenido pedagógico — es un recurso paralelo
-para alinear dirección visual antes de tocar el código real, en línea con el trabajo que vienen
-impulsando **Leo y Angel** en el proyecto.
+Este repo **no reemplaza** el sitio actual ni su contenido pedagógico, ni bifurca la experiencia
+en dos productos separados. Es una sola ruta con un solo punto de llegada — el selector de
+audiencia elige en qué escalón arrancás, no a qué sitio vas. Es un recurso paralelo para alinear
+dirección visual antes de tocar el código real, en línea con el trabajo que vienen impulsando
+**Leo y Angel** en el proyecto.
 
 ## Recursos
 
@@ -19,7 +22,8 @@ impulsando **Leo y Angel** en el proyecto.
 Un HTML/CSS vanilla (sin build step, igual que el sitio original) que muestra cómo se vería
 la ruta con:
 
-- Hero con selector de audiencia ("Nunca programé antes" / "Ya tengo bases")
+- Paleta, tipografía (Titillium Web) y franja de colores heredadas de python.org.co — no inventadas
+- Hero con selector de punto de partida ("Nunca programé antes" / "Ya tengo bases"), misma ruta para los dos
 - Playground destacado cerca del hero, no al final
 - Tarjetas de fase con ícono y badge de estado
 - Checklist con progreso visual por bloques, en vez de un contador plano

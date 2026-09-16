@@ -4,32 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guía para el Front-end Developer — Ruta Python</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
 <style>
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Work Sans', system-ui, sans-serif; background: #FBF8F2; color: #1E2433; line-height: 1.6; }
+  body { margin: 0; font-family: 'Titillium Web', system-ui, sans-serif; background: #050509; color: #F4F4F5; line-height: 1.6; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 56px 24px 100px; }
-  h1, h2, h3 { font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.3px; }
-  h1 { font-size: 34px; margin: 0 0 8px; }
-  h2 { font-size: 23px; margin: 56px 0 16px; padding-top: 20px; border-top: 1px solid #E7E1D3; }
-  h3 { font-size: 17px; margin: 28px 0 10px; }
-  p { color: #4B5468; font-size: 15.5px; }
-  a { color: #2F5FA8; }
+  h1, h2, h3 { font-weight: 900; letter-spacing: -0.3px; color: #FFFFFF; }
+  h1 { font-size: 32px; margin: 0 0 8px; }
+  h2 { font-size: 21px; margin: 56px 0 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+  h3 { font-size: 16px; margin: 28px 0 10px; }
+  p { color: rgba(244,244,245,0.7); font-size: 15.5px; }
+  a { color: #4B8BBE; }
   code, .mono { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13.5px; }
-  code { background: #EDE9E3; color: #9A3412; padding: 2px 6px; border-radius: 4px; }
-  pre { background: #1E2433; color: #E7E9EE; padding: 18px 20px; border-radius: 10px; overflow-x: auto; font-size: 13px; line-height: 1.6; }
-  pre code { background: none; color: inherit; padding: 0; }
+  code { background: #16162E; color: #FFD43B; padding: 2px 6px; border: 1px solid rgba(255,255,255,0.08); }
+  pre { background: #0D0D1A; color: #E7E9EE; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; font-size: 13px; line-height: 1.6; }
+  pre code { background: none; color: inherit; padding: 0; border: none; }
   table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #E7E1D3; vertical-align: top; }
-  th { color: #7C8496; font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.3px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.1); vertical-align: top; }
+  th { color: rgba(244,244,245,0.5); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
   .swatch { display: inline-flex; align-items: center; gap: 8px; }
-  .dot { width: 16px; height: 16px; border-radius: 5px; display: inline-block; border: 1px solid rgba(0,0,0,0.08); }
-  .callout { padding: 16px 20px; border-radius: 12px; background: #EAF1FB; border: 1px solid #BBD3EF; font-size: 14.5px; margin: 20px 0; }
-  .callout.warn { background: #FFF6DF; border-color: #F6C445; }
-  .topbar { padding: 14px 24px; background: #1E2433; }
-  .topbar a { color: #D7DCE8; font-size: 13.5px; font-weight: 600; text-decoration: none; }
-  ul { color: #4B5468; font-size: 15.5px; padding-left: 22px; }
+  .dot { width: 16px; height: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.2); }
+  .callout { padding: 16px 20px; background: #16162E; border: 1px solid rgba(75,139,190,0.4); border-left: 3px solid #4B8BBE; font-size: 14.5px; margin: 20px 0; }
+  .callout.warn { border-color: rgba(255,212,59,0.4); border-left-color: #FFD43B; }
+  .topbar { padding: 14px 24px; background: #0D0D1A; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .topbar a { color: rgba(244,244,245,0.75); font-size: 12.5px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+  ul { color: rgba(244,244,245,0.7); font-size: 15.5px; padding-left: 22px; }
   li { margin-bottom: 6px; }
+  strong { color: #FFFFFF; }
 </style>
 </head>
 <body>
@@ -46,52 +47,71 @@
     Todo lo de acá abajo es negociable — lo importante es dejar registrado el razonamiento detrás de cada cambio.
   </div>
 
+  <h2>0. Por qué cambió el enfoque</h2>
+  <p>Esta ruta va a estar vinculada al sitio oficial <a href="https://python.org.co/" target="_blank" rel="noopener">python.org.co</a> —
+  eso mueve la paleta y la tipografía de "lo que nos pareció lindo" a "lo que ya usa la marca de la comunidad". La v1 de este mockup
+  usaba una paleta propia (azul/amarillo pastel, tipografía redondeada Fredoka); esta versión hereda los valores reales
+  del sitio oficial, verificados con <code>getComputedStyle</code> sobre la página en vivo, no inventados a ojo.</p>
+  <p>También cambió el marco conceptual del selector de audiencia. La primera versión lo presentaba como dos caminos
+  paralelos ("Nunca programé" / "Ya tengo bases"), y eso se leyó — con razón — como si fuera un producto separado del
+  contenido que ya armaron Leo y Angel. El ajuste: <strong>es una sola ruta con un solo punto de llegada</strong> (formar gente
+  para desempeñarse profesionalmente en la industria tech); el selector no bifurca el sitio, elige en qué escalón de esa
+  misma escalera arranca cada persona. Mismo shell, mismo nav, misma identidad — lo que cambia con el nivel es la
+  densidad de scaffolding y el tono del copy en cada fase, no el sistema de diseño.</p>
+
   <h2>1. Qué cambia y qué no</h2>
-  <p>El objetivo es hacer la página más accesible para gente que nunca programó, sin perder la profundidad técnica que ya tiene para quien sigue el track completo. Se toca principalmente:</p>
+  <p>El objetivo es hacer la página más accesible para gente que nunca programó, sin perder la profundidad técnica que ya tiene para quien sigue el track completo, y sin crear una identidad visual paralela a la del sitio oficial. Se toca principalmente:</p>
   <ul>
-    <li>La paleta de colores y tipografía (tokens de <code>styles.css</code>)</li>
-    <li>El <code>header.hero</code>: pasa de un título + párrafo a un hero con selector de audiencia</li>
+    <li>La paleta de colores y tipografía (tokens de <code>styles.css</code>) — ahora heredados de python.org.co</li>
+    <li>El <code>header.hero</code>: pasa de un título + párrafo a un hero con selector de punto de partida</li>
     <li>Las tarjetas de <code>#principios</code> y <code>#ruta</code>: pasan de texto plano a tarjetas con ícono y badges de estado</li>
     <li>El checklist (<code>#checklist</code>): se agrega una vista de progreso por bloques arriba de la lista existente</li>
   </ul>
   <p><strong>No se toca:</strong> <code>#modulos</code> (las fichas técnicas de Fase 3/4), <code>#py5tabla</code>, <code>#docs-oficiales</code>, <code>#practica</code>, <code>#hitos</code> ni la lógica de <code>app.js</code> — son contenido denso para quien ya está en el track, no hace falta "gamificarlos".</p>
 
-  <h2>2. Tokens de color — <code>styles.css</code> <span class="mono">:root</span></h2>
-  <p>Hoy el archivo define esto en las líneas 7–40 aprox. Se puede migrar gradual: agregar los tokens nuevos sin borrar los viejos hasta confirmar que nada más los referencia.</p>
+  <h2>2. Tokens de color — verificados sobre python.org.co</h2>
+  <p>Estos valores se sacaron con <code>getComputedStyle</code> directo sobre el sitio oficial en vivo (no son una estimación visual), para que lo que se proponga acá sea trazable a la fuente real:</p>
 
   <table>
-    <tr><th>Token actual</th><th>Valor</th><th>Propuesta</th><th>Valor</th></tr>
-    <tr><td><span class="swatch"><span class="dot" style="background:#f8f7f5"></span><code>--bg</code></span></td><td>#f8f7f5</td><td><code>--bg</code></td><td><span class="swatch"><span class="dot" style="background:#FBF8F2"></span>#FBF8F2</span></td></tr>
-    <tr><td><span class="swatch"><span class="dot" style="background:#2d6a4f"></span><code>--accent</code></span></td><td>#2d6a4f (verde bosque)</td><td><code>--accent-blue</code></td><td><span class="swatch"><span class="dot" style="background:#2F5FA8"></span>#2F5FA8</span></td></tr>
-    <tr><td>—</td><td>nuevo</td><td><code>--accent-yellow</code></td><td><span class="swatch"><span class="dot" style="background:#F6C445"></span>#F6C445</span></td></tr>
-    <tr><td>—</td><td>nuevo</td><td><code>--accent-blue-deep</code></td><td><span class="swatch"><span class="dot" style="background:#1F3E73"></span>#1F3E73</span></td></tr>
-    <tr><td><code>--accent</code> / <code>--accent-2</code></td><td>verde, uso general</td><td><code>--accent-success</code></td><td><span class="swatch"><span class="dot" style="background:#3E8E5B"></span>#3E8E5B — <em>se conserva, pero solo para estados "logrado"</em></span></td></tr>
-    <tr><td><code>--text</code></td><td>#1c1917</td><td><code>--ink</code></td><td><span class="swatch"><span class="dot" style="background:#1E2433"></span>#1E2433</span></td></tr>
-    <tr><td><code>--text-2</code></td><td>#57534e</td><td><code>--ink-soft</code></td><td><span class="swatch"><span class="dot" style="background:#4B5468"></span>#4B5468</span></td></tr>
-    <tr><td><code>--radius</code></td><td>6px</td><td><code>--radius-lg</code></td><td>16–20px en tarjetas de hero/beneficios (más redondeado, más amigable)</td></tr>
+    <tr><th>Token</th><th>Valor</th><th>Uso en python.org.co</th></tr>
+    <tr><td><code>--bg</code></td><td><span class="swatch"><span class="dot" style="background:#0D0D1A"></span>#0D0D1A</span></td><td><code>body</code> background</td></tr>
+    <tr><td><code>--bg-panel</code></td><td><span class="swatch"><span class="dot" style="background:#16162E"></span>#16162E</span></td><td>fondo de tarjetas de comunidad</td></tr>
+    <tr><td><code>--text</code></td><td><span class="swatch"><span class="dot" style="background:#F4F4F5"></span>#F4F4F5</span></td><td>texto de body</td></tr>
+    <tr><td><code>--accent-yellow</code></td><td><span class="swatch"><span class="dot" style="background:#FFD43B"></span>#FFD43B</span></td><td>botón primario ("Únete a la comunidad") — el amarillo de marca de Python</td></tr>
+    <tr><td><code>--accent-blue</code></td><td><span class="swatch"><span class="dot" style="background:#4B8BBE"></span>#4B8BBE</span></td><td>subheadline ("¡Aprende, comparte y crece!") — el azul de marca de Python</td></tr>
+    <tr><td><code>--accent-green</code></td><td><span class="swatch"><span class="dot" style="background:#2FB350"></span>#2FB350</span></td><td>botón secundario ("Próximos eventos")</td></tr>
+    <tr><td><code>--radius</code></td><td>0px</td><td>todo el sitio — botones, tarjetas, chips del mapa. Nada de esquinas redondeadas.</td></tr>
   </table>
 
+  <p>Estos seis colores forman la franja arcoíris que corre arriba del sitio oficial (guiño a los colores de la comunidad Python), y el mockup la reutiliza como elemento decorativo — es el gesto más directo de "somos parte de la misma familia":</p>
+  <p style="display:flex; gap:4px; margin:12px 0;">
+    <span style="width:32px;height:24px;background:#E24329;"></span>
+    <span style="width:32px;height:24px;background:#F58220;"></span>
+    <span style="width:32px;height:24px;background:#FFD43B;"></span>
+    <span style="width:32px;height:24px;background:#2FB350;"></span>
+    <span style="width:32px;height:24px;background:#4B8BBE;"></span>
+    <span style="width:32px;height:24px;background:#5C4EE5;"></span>
+  </p>
+
   <div class="callout warn">
-    <strong>Ojo con el contraste.</strong> En el mockup usamos <code>#6B6558</code> para texto secundario sobre <code>#FBF8F2</code>
-    (≈5.4:1, pasa WCAG AA). Evitá tonos más claros tipo <code>#9A9384</code> para texto de lectura — dan ~2.9:1 y no pasan el mínimo de accesibilidad. Es una revisión que ya hicimos sobre el mockup, pero vale repetirla en cada color nuevo que se agregue.
+    <strong>Ojo con el contraste</strong> al agregar texto secundario. <code>rgba(244,244,245,0.6)</code> sobre <code>#0D0D1A</code>
+    da contraste sobrado (fondo casi negro + texto casi blanco), pero si en algún componente se usa un gris más apagado,
+    conviene chequearlo — ya nos pasó en la v1 con <code>#9A9384</code> sobre fondo claro (2.9:1, no pasaba WCAG AA).
   </div>
 
   <h2>3. Tipografía</h2>
-  <p>El sitio actual usa la pila del sistema (<code>-apple-system, "Segoe UI", Arial...</code>) — cero dependencias externas, carga instantánea. La propuesta agrega dos fuentes de Google Fonts:</p>
-  <pre><code>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"&gt;</code></pre>
+  <p>El sitio actual (<code>HOJA_RUTA_PYTHON_COLOMBIA</code>) usa la pila del sistema (<code>-apple-system, "Segoe UI", Arial...</code>) — cero dependencias externas. El sitio oficial <strong>sí</strong> carga una fuente de Google Fonts en todo el sitio, título y cuerpo por igual:</p>
+  <pre><code>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&amp;display=swap"&gt;</code></pre>
   <ul>
-    <li><strong>Fredoka</strong> (600/700) — títulos y números de fase. Redondeada, amigable, sin perder legibilidad.</li>
-    <li><strong>Work Sans</strong> (400–700) — reemplaza la pila de sistema para el cuerpo, mantiene buena lectura en bloques largos (fichas de módulo, checklist).</li>
+    <li><strong>Titillium Web</strong> — la única familia que usa python.org.co. H1 en weight 900 (72px, letter-spacing -1.8px), nav y botones en weight 600 uppercase con tracking ancho (~2.3px), subheadline en weight 700.</li>
   </ul>
-  <div class="callout warn">
-    Esto es una dependencia externa nueva en un sitio que hoy no tiene ninguna — vale la pena decidirlo con Leo y Angel explícitamente, no asumirlo. Si se prioriza performance/offline por sobre estética, se puede quedar con la pila de sistema y aplicar el mismo peso/tracking con lo que ya hay.
-  </div>
+  <p>Como esta ruta se vincula al sitio oficial, tiene más sentido heredar esta fuente que traer una propia — es la misma decisión de identidad que la paleta de colores. Sigue siendo una dependencia externa nueva para <code>HOJA_RUTA_PYTHON_COLOMBIA</code>, así que vale confirmarlo con Leo y Angel, pero al menos ya no es una tercera fuente inventada, es la que ya usa la comunidad.</p>
 
   <h2>4. Hero — <code>index.html</code> líneas 60–76</h2>
   <p>Hoy es <code>&lt;h1&gt;Empeza por la guia, no por el repo&lt;/h1&gt;</code> + un párrafo. La propuesta:</p>
   <ul>
     <li>Headline más corto y emocional en vez de instruccional</li>
-    <li>Selector binario de audiencia ("Nunca programé antes" / "Ya tengo bases") como primer punto de contacto — cada botón podría anclar a una sección distinta o a un modal de onboarding, a definir con backend/lógica en <code>app.js</code></li>
+    <li>Selector de punto de partida ("Nunca programé antes" / "Ya tengo bases") — <strong>no</strong> es una bifurcación a dos experiencias distintas, es elegir en qué escalón de la misma ruta arrancar. Cada botón ancla a una sección distinta de la misma página, no a un sitio o modo aparte.</li>
     <li>Preview del Playground al costado del hero (hoy está al final, línea 916) — moverlo o duplicarlo arriba como "teaser" que linkee a la sección completa</li>
   </ul>
   <p>Ver la estructura completa en <a href="index.html">index.html</a> de este repo (sección <code>#view-desktop</code>) — es HTML/CSS plano, se puede copiar el bloque del hero directo.</p>
@@ -99,8 +119,8 @@
   <h2>5. Tarjetas de <code>#ruta</code> — líneas 109–177</h2>
   <p>Los datos ya existen tal cual en el HTML actual (número de fase, nombre, descripción, horas/semanas/herramienta, badge de estado). Lo que cambia es solo presentación:</p>
   <ul>
-    <li>Grid de 3 columnas en vez de lista vertical</li>
-    <li>Badge de estado con color según el valor real: <code>Fase previa</code> → verde, <code>Estas aca</code> → amarillo/destacado, <code>Proximo</code> → azul, <code>Por definir</code> → borde punteado gris</li>
+    <li>Grid de 3 columnas en vez de lista vertical, tarjetas sin esquinas redondeadas (radius 0, como todo el sitio oficial)</li>
+    <li>Badge de estado con color según el valor real: <code>Fase previa</code> → verde <code>#2FB350</code>, <code>Estas aca</code> → amarillo <code>#FFD43B</code> destacado, <code>Proximo</code> → azul <code>#4B8BBE</code>, <code>Por definir</code> → borde punteado gris translúcido</li>
     <li>Ícono por fase (opcional) — el mockup no le puso un ícono distinto a cada fase todavía, es una decisión pendiente</li>
   </ul>
 

@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hoja de Ruta Python — Mockup de referencia</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<title>Ruta Python Colombia — Mockup de referencia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    font-family: 'Work Sans', system-ui, sans-serif;
-    background: #EDEAE2;
-    color: #1E2433;
+    font-family: 'Titillium Web', system-ui, sans-serif;
+    background: #050509;
+    color: #F4F4F5;
   }
-  h1, h2, h3, .display { font-family: 'Fredoka', system-ui, sans-serif; }
-  a { color: #2F5FA8; text-decoration: none; }
-  a:hover { color: #1F3E73; }
-  .btn-yellow { background: #F6C445; color: #1E2433; }
-  .btn-yellow:hover { background: #E8B22C; }
-  .btn-blue-outline { background: transparent; color: #2F5FA8; border: 2px solid #2F5FA8; }
-  .btn-blue-outline:hover { background: #EAF1FB; }
+  a { color: #4B8BBE; text-decoration: none; }
+  a:hover { color: #6BA3D0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 2.2px; font-weight: 600; font-size: 12.5px; }
+  .btn-yellow { background: #FFD43B; color: #0D0D1A; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 600; }
+  .btn-yellow:hover { background: #F0C42E; }
+  .btn-outline-blue { background: transparent; color: #4B8BBE; border: 2px solid #4B8BBE; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 600; }
+  .btn-outline-blue:hover { background: rgba(75,139,190,0.12); }
+  .btn-outline-green { background: transparent; color: #2FB350; border: 2px solid #2FB350; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 600; }
 
   /* ---- topbar ---- */
   .topbar {
@@ -27,29 +28,31 @@
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 12px;
     padding: 14px 24px;
-    background: #1E2433; color: #FBF8F2;
-    border-bottom: 1px solid #33394A;
+    background: #0D0D1A; color: #F4F4F5;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  .topbar .title { font-weight: 600; font-size: 15px; }
-  .topbar .subtitle { font-size: 12.5px; color: #9AA3B8; margin-top: 2px; }
+  .topbar .title { font-weight: 700; font-size: 15px; }
+  .topbar .subtitle { font-size: 12.5px; color: rgba(244,244,245,0.5); margin-top: 2px; }
   .topbar .links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .toggle-group { display: inline-flex; background: #2B3244; border-radius: 999px; padding: 3px; }
+  .toggle-group { display: inline-flex; background: #16162E; padding: 3px; border: 1px solid rgba(255,255,255,0.1); }
   .toggle-btn {
-    border: none; background: transparent; color: #9AA3B8;
-    font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 13px;
-    padding: 8px 16px; border-radius: 999px; cursor: pointer;
+    border: none; background: transparent; color: rgba(244,244,245,0.6);
+    font-family: 'Titillium Web', sans-serif; font-weight: 700; font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 16px; cursor: pointer;
   }
-  .toggle-btn.active { background: #F6C445; color: #1E2433; }
+  .toggle-btn.active { background: #FFD43B; color: #0D0D1A; }
   .topbar-link {
-    font-size: 13px; font-weight: 600; color: #D7DCE8;
-    padding: 8px 14px; border-radius: 999px; border: 1px solid #454C60;
+    font-size: 12.5px; font-weight: 600; color: rgba(244,244,245,0.75);
+    text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 14px; border: 1px solid rgba(255,255,255,0.18);
   }
-  .topbar-link:hover { color: #FBF8F2; border-color: #6B7488; }
+  .topbar-link:hover { color: #FFFFFF; border-color: rgba(255,255,255,0.4); }
 
   /* ---- stage ---- */
   .stage { padding: 40px 24px 80px; display: flex; justify-content: center; }
-  .frame-desktop { width: 1440px; max-width: 100%; overflow-x: auto; box-shadow: 0 30px 60px rgba(20,20,25,0.18); border-radius: 4px; }
-  .frame-mobile { width: 390px; max-width: 100%; box-shadow: 0 30px 60px rgba(20,20,25,0.18); border-radius: 28px; overflow: hidden; border: 10px solid #1E2433; }
+  .frame-desktop { width: 1440px; max-width: 100%; overflow-x: auto; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+  .frame-mobile { width: 390px; max-width: 100%; box-shadow: 0 30px 60px rgba(0,0,0,0.5); border-radius: 28px; overflow: hidden; border: 10px solid #16162E; }
   #view-mobile { display: none; }
 </style>
 </head>
@@ -57,8 +60,8 @@
 
   <div class="topbar">
     <div>
-      <div class="title">Hoja de Ruta Python — Mockup de referencia</div>
-      <div class="subtitle">Propuesta visual para el equipo. Contenido pendiente de validación con Leo y Angel.</div>
+      <div class="title">Ruta Python Colombia — Mockup de referencia</div>
+      <div class="subtitle">Alineado a la identidad visual de python.org.co. Pendiente de validación con Leo y Angel.</div>
     </div>
     <div class="links">
       <div class="toggle-group">
@@ -67,6 +70,7 @@
       </div>
       <a class="topbar-link" href="https://claude.ai/artifact/CW7k7L5cccoYE6iyEEtvGc" target="_blank" rel="noopener">Ver canvas interactivo →</a>
       <a class="topbar-link" href="guide.html">Guía para el developer →</a>
+      <a class="topbar-link" href="https://python.org.co/" target="_blank" rel="noopener">Sitio oficial →</a>
       <a class="topbar-link" href="https://ivangomezgb.github.io/HOJA_RUTA_PYTHON_COLOMBIA/" target="_blank" rel="noopener">Sitio actual →</a>
     </div>
   </div>
@@ -75,145 +79,145 @@
 
     <!-- ============ DESKTOP ============ -->
     <div id="view-desktop" class="frame-desktop">
-      <div style="width: 1440px; background: #FBF8F2;">
+      <div style="width: 1440px; background: #0D0D1A;">
+
+        <div style="display: flex; height: 4px;">
+          <div style="flex: 1; background: #E24329;"></div>
+          <div style="flex: 1; background: #F58220;"></div>
+          <div style="flex: 1; background: #FFD43B;"></div>
+          <div style="flex: 1; background: #2FB350;"></div>
+          <div style="flex: 1; background: #4B8BBE;"></div>
+          <div style="flex: 1; background: #5C4EE5;"></div>
+        </div>
 
         <!-- HEADER -->
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 64px; border-bottom: 1px solid #E7E1D3;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 64px; border-bottom: 1px solid rgba(255,255,255,0.1);">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 40px; height: 40px; border-radius: 12px; background: #1F3E73; display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
+            <div style="width: 38px; height: 38px; background: #FFD43B; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D0D1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
             </div>
-            <div style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: -0.2px;">Hoja de Ruta Python</div>
+            <div style="font-weight: 700; font-size: 19px; letter-spacing: -0.2px;">Ruta Python <span style="color: #4B8BBE;">Colombia</span></div>
           </div>
-          <div style="display: flex; align-items: center; gap: 36px; font-size: 15px; font-weight: 500; color: #4B5468;">
-            <a href="#ruta">La ruta</a>
-            <a href="#playground">Playground</a>
-            <a href="#checklist">Mi progreso</a>
+          <div style="display: flex; align-items: center; gap: 40px;" class="eyebrow">
+            <a href="#ruta" style="color: #F4F4F5;">La ruta</a>
+            <a href="#playground" style="color: #F4F4F5;">Playground</a>
+            <a href="#checklist" style="color: #F4F4F5;">Mi progreso</a>
           </div>
-          <div style="padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 14px;" class="btn-yellow">Empezar ahora</div>
+          <div style="padding: 13px 26px;" class="btn-yellow">Empezar ahora</div>
         </div>
 
         <!-- HERO -->
         <div style="display: flex; gap: 56px; padding: 88px 64px 96px; align-items: flex-start;">
 
-          <div style="flex: 1 1 700px; display: flex; flex-direction: column; gap: 28px;">
-            <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: #EAF1FB; color: #2F5FA8; font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase;">
-              Ruta de formación · Colombia
-            </div>
-            <h1 style="margin: 0; font-size: 56px; line-height: 1.08; font-weight: 700; letter-spacing: -1px; color: #1E2433;">
+          <div style="flex: 1 1 700px; display: flex; flex-direction: column; gap: 26px;">
+            <div class="eyebrow" style="color: #FFD43B;">Comunidad Python Colombia</div>
+            <h1 style="margin: 0; font-size: 58px; line-height: 1.06; font-weight: 900; letter-spacing: -1.6px; color: #FFFFFF;">
               Programar no es<br>solo para programadores.
             </h1>
-            <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #4B5468; max-width: 560px;">
-              Una ruta guiada, paso a paso, para aprender Python desde cero — sin jerga que no entendés
-              y sin perderte entre videos sueltos. Cada fase te dice exactamente qué sigue.
+            <div style="font-size: 24px; font-weight: 700; color: #4B8BBE;">Tu punto de entrada a la comunidad.</div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(244,244,245,0.72); max-width: 560px;">
+              Una sola ruta, de cero a profesional. Elegí en qué escalón arrancás — el resto del camino
+              y la comunidad son los mismos para todos.
             </p>
 
-            <div style="display: flex; gap: 20px; margin-top: 8px;">
-              <div style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 20px; background: #FFF6DF; border: 2px solid #F6C445;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B9860C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><circle cx="12" cy="17" r="0.6" fill="#B9860C" stroke="none"></circle></svg>
-                <div style="font-weight: 600; font-size: 17px;">Nunca programé antes</div>
-                <div style="font-size: 14.5px; color: #4B5468; line-height: 1.4;">Arrancás desde cero, sin miedo a la pantalla negra.</div>
-                <div style="align-self: flex-start; margin-top: 4px; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 14.5px;" class="btn-yellow">Empezar mi ruta →</div>
+            <div style="display: flex; gap: 20px; margin-top: 10px;">
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 26px; background: #16162E; border: 1px solid rgba(255,212,59,0.4); border-top: 3px solid #FFD43B;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><circle cx="12" cy="17" r="0.6" fill="#FFD43B" stroke="none"></circle></svg>
+                <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Nunca programé antes</div>
+                <div style="font-size: 14px; color: rgba(244,244,245,0.65); line-height: 1.45;">Arrancás en el escalón cero. Sin miedo a la pantalla negra.</div>
+                <div style="align-self: flex-start; margin-top: 4px; padding: 11px 20px; font-size: 13px;" class="btn-yellow">Empezar mi ruta →</div>
               </div>
-              <div style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 20px; background: #EAF1FB; border: 2px solid #BBD3EF;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2F5FA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 2 4.5 5.2 4.5 9 0 2.2-.6 4-1.5 5.4L12 21l-3-4.1c-.9-1.4-1.5-3.2-1.5-5.4 0-3.8 1.7-7 4.5-9Z"></path><circle cx="12" cy="10.5" r="2.2"></circle><path d="M8.5 17.5 6 20M15.5 17.5 18 20"></path></svg>
-                <div style="font-weight: 600; font-size: 17px;">Ya tengo bases</div>
-                <div style="font-size: 14.5px; color: #4B5468; line-height: 1.4;">Saltás directo a tu fase y seguís avanzando.</div>
-                <div style="align-self: flex-start; margin-top: 4px; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 14.5px;" class="btn-blue-outline">Ver las fases →</div>
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 26px; background: #16162E; border: 1px solid rgba(75,139,190,0.4); border-top: 3px solid #4B8BBE;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4B8BBE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 2 4.5 5.2 4.5 9 0 2.2-.6 4-1.5 5.4L12 21l-3-4.1c-.9-1.4-1.5-3.2-1.5-5.4 0-3.8 1.7-7 4.5-9Z"></path><circle cx="12" cy="10.5" r="2.2"></circle><path d="M8.5 17.5 6 20M15.5 17.5 18 20"></path></svg>
+                <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Ya tengo bases</div>
+                <div style="font-size: 14px; color: rgba(244,244,245,0.65); line-height: 1.45;">Entrás más arriba en la misma escalera y seguís avanzando.</div>
+                <div style="align-self: flex-start; margin-top: 4px; padding: 11px 20px; font-size: 13px;" class="btn-outline-blue">Ver las fases →</div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: center; gap: 22px; margin-top: 4px; font-size: 13.5px; color: #7C8496;">
-              <span>✓ Para cualquier profesión</span>
-              <span>✓ 100% gratuita</span>
-              <span>✓ Probás sin instalar nada</span>
+            <div style="display: flex; align-items: center; gap: 24px; margin-top: 4px; font-size: 13px; color: rgba(244,244,245,0.55);">
+              <span>Para cualquier profesión</span>
+              <span>·</span>
+              <span>100% gratuita</span>
+              <span>·</span>
+              <span>Comunidad oficial de Python en Colombia</span>
             </div>
           </div>
 
-          <div style="flex: 0 0 480px; border-radius: 24px; background: #1F3E73; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 24px 48px rgba(31,62,115,0.28);">
+          <div style="flex: 0 0 480px; background: #16162E; border: 1px solid rgba(255,255,255,0.1); padding: 28px; display: flex; flex-direction: column; gap: 16px;">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <div style="display: flex; align-items: center; gap: 10px; color: #FBF8F2;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
-                <span style="font-weight: 600; font-size: 15px;">Playground Python</span>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2FB350" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+                <span style="font-weight: 700; font-size: 14.5px;" class="eyebrow">Playground Python</span>
               </div>
               <div style="display: flex; gap: 6px;">
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #E8967A;"></div>
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #F6C445;"></div>
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #6BBF8D;"></div>
+                <div style="width: 8px; height: 8px; background: #E24329;"></div>
+                <div style="width: 8px; height: 8px; background: #FFD43B;"></div>
+                <div style="width: 8px; height: 8px; background: #2FB350;"></div>
               </div>
             </div>
-            <div style="background: #16294A; border-radius: 14px; padding: 20px; font-family: monospace; font-size: 13.5px; line-height: 1.7; color: #D7E3F5;">
-              <div><span style="color: #8AB4F0;">frutas</span> = [<span style="color: #F6C445;">"manzana"</span>, <span style="color: #F6C445;">"naranja"</span>, <span style="color: #F6C445;">"pera"</span>]</div>
-              <div><span style="color: #8AB4F0;">gastos</span> = {<span style="color: #F6C445;">"enero"</span>: 450000, <span style="color: #F6C445;">"febrero"</span>: 380000}</div>
-              <div style="margin-top: 6px; color: #7C93B8;">for mes, valor in gastos.items():</div>
-              <div style="color: #7C93B8;">&nbsp;&nbsp;print(mes, valor)</div>
+            <div style="background: #0D0D1A; padding: 20px; font-family: monospace; font-size: 13.5px; line-height: 1.7; color: #D7E3F5; border: 1px solid rgba(255,255,255,0.08);">
+              <div><span style="color: #4B8BBE;">frutas</span> = [<span style="color: #FFD43B;">"manzana"</span>, <span style="color: #FFD43B;">"naranja"</span>, <span style="color: #FFD43B;">"pera"</span>]</div>
+              <div><span style="color: #4B8BBE;">gastos</span> = {<span style="color: #FFD43B;">"enero"</span>: 450000, <span style="color: #FFD43B;">"febrero"</span>: 380000}</div>
+              <div style="margin-top: 6px; color: rgba(244,244,245,0.5);">for mes, valor in gastos.items():</div>
+              <div style="color: rgba(244,244,245,0.5);">&nbsp;&nbsp;print(mes, valor)</div>
             </div>
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: #6BBF8D; color: #16294A; font-weight: 600; font-size: 13.5px;">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="#16294A" stroke="none"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+              <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: #2FB350; color: #0D0D1A; font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 1.2px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#0D0D1A" stroke="none"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
                 Ejecutar
               </div>
-              <div style="font-size: 12.5px; color: #7C93B8;">Ctrl + Enter</div>
+              <div style="font-size: 12px; color: rgba(244,244,245,0.45);">Ctrl + Enter</div>
             </div>
-            <div style="font-size: 13px; color: #A9BBD8; line-height: 1.5;">
+            <div style="font-size: 12.5px; color: rgba(244,244,245,0.5); line-height: 1.5;">
               Corre 100% en tu navegador. Sin instalar nada, sin cuenta, sin backend.
             </div>
           </div>
         </div>
 
         <!-- PRINCIPIOS -->
-        <div style="padding: 84px 64px; background: #FFFFFF; border-top: 1px solid #E7E1D3; border-bottom: 1px solid #E7E1D3;">
+        <div style="padding: 84px 64px; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
           <div style="max-width: 640px; margin: 0 0 48px;">
-            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: #2F5FA8; margin-bottom: 10px;">Por qué así</div>
-            <h2 style="margin: 0 0 14px; font-size: 34px; font-weight: 600; letter-spacing: -0.5px;">Pensada para que no te pierdas</h2>
-            <p style="margin: 0; font-size: 16px; color: #4B5468; line-height: 1.55;">Cinco reglas simples que guían cada fase de la ruta, pensadas para alguien que arranca de cero.</p>
+            <div class="eyebrow" style="color: #4B8BBE; margin-bottom: 10px;">Por qué así</div>
+            <h2 style="margin: 0 0 14px; font-size: 32px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF;">Pensada para que no te pierdas</h2>
+            <p style="margin: 0; font-size: 15.5px; color: rgba(244,244,245,0.65); line-height: 1.55;">Cinco reglas simples que guían cada fase de la ruta, pensadas para alguien que arranca de cero — sin bajar el nivel del resto del camino.</p>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);">
 
-            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 18px; background: #FBF8F2; border: 1px solid #E7E1D3;">
-              <div style="width: 52px; height: 52px; border-radius: 14px; background: #EAF1FB; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F5FA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="10 8.5 16 12 10 15.5 10 8.5"></polygon></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px;">Aprendés haciendo</div>
-              <div style="font-size: 14.5px; color: #4B5468; line-height: 1.45;">Proyectos desde el primer día. Nunca más de 25 minutos de teoría sin código de por medio.</div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #16162E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4B8BBE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="10 8.5 16 12 10 15.5 10 8.5"></polygon></svg>
+              <div style="font-weight: 700; font-size: 16px; color: #FFFFFF;">Aprendés haciendo</div>
+              <div style="font-size: 14px; color: rgba(244,244,245,0.6); line-height: 1.45;">Proyectos desde el primer día. Nunca más de 25 minutos de teoría sin código de por medio.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 18px; background: #FBF8F2; border: 1px solid #E7E1D3;">
-              <div style="width: 52px; height: 52px; border-radius: 14px; background: #FFF6DF; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9860C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><line x1="10.2" y1="17" x2="13.8" y2="17"></line></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px;">La intuición primero</div>
-              <div style="font-size: 14.5px; color: #4B5468; line-height: 1.45;">Los conceptos se anclan en ejemplos visuales y cotidianos antes de ponerles nombre técnico.</div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #16162E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><line x1="10.2" y1="17" x2="13.8" y2="17"></line></svg>
+              <div style="font-weight: 700; font-size: 16px; color: #FFFFFF;">La intuición primero</div>
+              <div style="font-size: 14px; color: rgba(244,244,245,0.6); line-height: 1.45;">Los conceptos se anclan en ejemplos visuales y cotidianos antes de ponerles nombre técnico.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 18px; background: #FBF8F2; border: 1px solid #E7E1D3;">
-              <div style="width: 52px; height: 52px; border-radius: 14px; background: #E9F5EC; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3E8E5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"></rect><rect x="13" y="13" width="7" height="7" rx="1.5"></rect></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px;">Sin complicarte de entrada</div>
-              <div style="font-size: 14.5px; color: #4B5468; line-height: 1.45;">Nada de bases de datos ni frameworks todavía. Primero, productividad real en tu día a día.</div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #16162E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2FB350" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7"></rect><rect x="13" y="13" width="7" height="7"></rect></svg>
+              <div style="font-weight: 700; font-size: 16px; color: #FFFFFF;">Sin complicarte de entrada</div>
+              <div style="font-size: 14px; color: rgba(244,244,245,0.6); line-height: 1.45;">Nada de bases de datos ni frameworks todavía. Primero, productividad real en tu día a día.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 18px; background: #FBF8F2; border: 1px solid #E7E1D3;">
-              <div style="width: 52px; height: 52px; border-radius: 14px; background: #F6E9E2; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B85C3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="12 7 14 12 12 17 10 12 12 7"></polygon></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px;">Para cualquier profesión</div>
-              <div style="font-size: 14.5px; color: #4B5468; line-height: 1.45;">No hace falta ser "de sistemas" para que Python te aumente la productividad.</div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #16162E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C4EE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="12 7 14 12 12 17 10 12 12 7"></polygon></svg>
+              <div style="font-weight: 700; font-size: 16px; color: #FFFFFF;">Para cualquier profesión</div>
+              <div style="font-size: 14px; color: rgba(244,244,245,0.6); line-height: 1.45;">No hace falta ser "de sistemas" para que Python te aumente la productividad.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 18px; background: #FBF8F2; border: 1px solid #E7E1D3;">
-              <div style="width: 52px; height: 52px; border-radius: 14px; background: #EAF1FB; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F5FA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px;">Ves el error, no solo lo leés</div>
-              <div style="font-size: 14.5px; color: #4B5468; line-height: 1.45;">Todo se explica con gráficos y animaciones, no solo con texto suelto en una terminal.</div>
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #16162E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E24329" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <div style="font-weight: 700; font-size: 16px; color: #FFFFFF;">Ves el error, no solo lo leés</div>
+              <div style="font-size: 14px; color: rgba(244,244,245,0.6); line-height: 1.45;">Todo se explica con gráficos y animaciones, no solo con texto suelto en una terminal.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 28px; border-radius: 18px; background: #1F3E73; color: #FBF8F2;">
-              <div style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.3;">¿Al final del camino?</div>
-              <div style="font-size: 14.5px; color: #C9D6EC; line-height: 1.5;">Bases sólidas para seguir hacia automatización, datos o inteligencia artificial — a tu ritmo.</div>
+            <div style="display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 28px; background: #FFD43B;">
+              <div style="font-weight: 900; font-size: 17px; line-height: 1.3; color: #0D0D1A;">¿Al final del camino?</div>
+              <div style="font-size: 14px; color: #0D0D1A; line-height: 1.5; opacity: 0.75;">Bases sólidas para seguir hacia automatización, datos o inteligencia artificial — y toda la comunidad para acompañarte.</div>
             </div>
 
           </div>
@@ -223,115 +227,111 @@
         <div id="ruta" style="padding: 84px 64px;">
           <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px; gap: 32px;">
             <div style="max-width: 620px;">
-              <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: #2F5FA8; margin-bottom: 10px;">La ruta</div>
-              <h2 style="margin: 0 0 14px; font-size: 34px; font-weight: 600; letter-spacing: -0.5px;">Seis fases, un solo hilo conductor</h2>
-              <p style="margin: 0; font-size: 16px; color: #4B5468; line-height: 1.55;">De la lógica visual a resolver problemas reales con archivos y automatización.</p>
+              <div class="eyebrow" style="color: #4B8BBE; margin-bottom: 10px;">La ruta</div>
+              <h2 style="margin: 0 0 14px; font-size: 32px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF;">Seis fases, un solo hilo conductor</h2>
+              <p style="margin: 0; font-size: 15.5px; color: rgba(244,244,245,0.65); line-height: 1.55;">De la lógica visual a resolver problemas reales con archivos y automatización.</p>
             </div>
-            <div style="font-size: 13.5px; color: #7C8496; max-width: 280px; text-align: right; line-height: 1.5;">No se avanza de fase con menos del 80% de los hitos cumplidos.</div>
+            <div style="font-size: 13px; color: rgba(244,244,245,0.5); max-width: 280px; text-align: right; line-height: 1.5;">No se avanza de fase con menos del 80% de los hitos cumplidos.</div>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);">
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E7E1D3;">
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #16162E;">
               <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div style="width: 40px; height: 40px; border-radius: 12px; background: #E9F5EC; color: #3E8E5B; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-weight: 600;">1</div>
-                <div style="padding: 5px 12px; border-radius: 999px; background: #E9F5EC; color: #3E8E5B; font-size: 12px; font-weight: 600;">Ya recorrida</div>
+                <div style="width: 36px; height: 36px; background: rgba(47,179,80,0.15); color: #2FB350; display: flex; align-items: center; justify-content: center; font-weight: 900;">1</div>
+                <div class="eyebrow" style="padding: 5px 10px; background: rgba(47,179,80,0.15); color: #2FB350; font-size: 11px;">Ya recorrida</div>
               </div>
-              <div style="font-weight: 600; font-size: 17px;">Fundamentos de Python</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.5;">Variables, print(), input(), operadores y primer contacto con Turtle para ver el código en acción.</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Fundamentos de Python</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.5;">Variables, print(), input(), operadores y primer contacto con Turtle para ver el código en acción.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E7E1D3;">
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #16162E;">
               <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div style="width: 40px; height: 40px; border-radius: 12px; background: #E9F5EC; color: #3E8E5B; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-weight: 600;">2</div>
-                <div style="padding: 5px 12px; border-radius: 999px; background: #E9F5EC; color: #3E8E5B; font-size: 12px; font-weight: 600;">Ya recorrida</div>
+                <div style="width: 36px; height: 36px; background: rgba(47,179,80,0.15); color: #2FB350; display: flex; align-items: center; justify-content: center; font-weight: 900;">2</div>
+                <div class="eyebrow" style="padding: 5px 10px; background: rgba(47,179,80,0.15); color: #2FB350; font-size: 11px;">Ya recorrida</div>
               </div>
-              <div style="font-weight: 600; font-size: 17px;">Lógica y Control de Flujo</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.5;">Condicionales, bucles y tus primeras funciones con parámetros. Turtle ya consolidado.</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Lógica y Control de Flujo</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.5;">Condicionales, bucles y tus primeras funciones con parámetros. Turtle ya consolidado.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FFF6DF; border: 2px solid #F6C445;">
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #16162E; border-top: 3px solid #FFD43B; margin-top: -3px;">
               <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div style="width: 40px; height: 40px; border-radius: 12px; background: #F6C445; color: #1E2433; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-weight: 600;">3</div>
-                <div style="padding: 5px 12px; border-radius: 999px; background: #1E2433; color: #F6C445; font-size: 12px; font-weight: 600;">Estás acá</div>
+                <div style="width: 36px; height: 36px; background: #FFD43B; color: #0D0D1A; display: flex; align-items: center; justify-content: center; font-weight: 900;">3</div>
+                <div class="eyebrow" style="padding: 5px 10px; background: #FFD43B; color: #0D0D1A; font-size: 11px;">Estás acá</div>
               </div>
-              <div style="font-weight: 600; font-size: 17px;">Programación Visual y Creativa</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.5;">Cada estructura lógica se dibuja al instante con py5: la programación se ve, no se imagina.</div>
-              <div style="font-size: 12.5px; color: #8A6D1C; margin-top: 2px;">46 h · 8 semanas · Google Colab + py5</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Programación Visual y Creativa</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.5;">Cada estructura lógica se dibuja al instante con py5: la programación se ve, no se imagina.</div>
+              <div style="font-size: 12px; color: #FFD43B; margin-top: 2px;">46 h · 8 semanas · Google Colab + py5</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E7E1D3;">
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #16162E;">
               <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div style="width: 40px; height: 40px; border-radius: 12px; background: #EAF1FB; color: #2F5FA8; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-weight: 600;">4</div>
-                <div style="padding: 5px 12px; border-radius: 999px; background: #EAF1FB; color: #2F5FA8; font-size: 12px; font-weight: 600;">Próximo</div>
+                <div style="width: 36px; height: 36px; background: rgba(75,139,190,0.15); color: #4B8BBE; display: flex; align-items: center; justify-content: center; font-weight: 900;">4</div>
+                <div class="eyebrow" style="padding: 5px 10px; background: rgba(75,139,190,0.15); color: #4B8BBE; font-size: 11px;">Próximo</div>
               </div>
-              <div style="font-weight: 600; font-size: 17px;">Python para Resolver Problemas Reales</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.5;">Listas, diccionarios, archivos y automatización de tareas en proyectos con estructura real.</div>
-              <div style="font-size: 12.5px; color: #6B85AC; margin-top: 2px;">52 h · 9 semanas · Python 3.12 + VS Code</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: #FFFFFF;">Python para Resolver Problemas Reales</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.5;">Listas, diccionarios, archivos y automatización de tareas en proyectos con estructura real.</div>
+              <div style="font-size: 12px; color: #4B8BBE; margin-top: 2px;">52 h · 9 semanas · Python 3.12 + VS Code</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FBF8F2; border: 1.5px dashed #C9C2AF;">
-              <div style="width: 40px; height: 40px; border-radius: 12px; background: #EFEAE0; color: #9A9384; display: flex; align-items: center; justify-content: center;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A9384" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.6 1.4c0 1.6-2.1 1.7-2.1 3.4"></path><circle cx="12" cy="17" r="0.4" fill="#9A9384" stroke="none"></circle></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px; color: #6B6558;">Por definir</div>
-              <div style="font-size: 14px; color: #6B6558; line-height: 1.5;">Se anuncia al cerrar la Fase 4. El nombre y el repo se agregan acá cuando estén listos.</div>
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #0D0D1A; border: 1px dashed rgba(255,255,255,0.18);">
+              <div style="width: 36px; height: 36px; border: 1px dashed rgba(244,244,245,0.35); color: rgba(244,244,245,0.4); display: flex; align-items: center; justify-content: center; font-weight: 900;">5</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: rgba(244,244,245,0.55);">Por definir</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.4); line-height: 1.5;">Se anuncia al cerrar la Fase 4. El nombre y el repo se agregan acá cuando estén listos.</div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border-radius: 18px; background: #FBF8F2; border: 1.5px dashed #C9C2AF;">
-              <div style="width: 40px; height: 40px; border-radius: 12px; background: #EFEAE0; color: #9A9384; display: flex; align-items: center; justify-content: center;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A9384" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.6 1.4c0 1.6-2.1 1.7-2.1 3.4"></path><circle cx="12" cy="17" r="0.4" fill="#9A9384" stroke="none"></circle></svg>
-              </div>
-              <div style="font-weight: 600; font-size: 17px; color: #6B6558;">Por definir</div>
-              <div style="font-size: 14px; color: #6B6558; line-height: 1.5;">Se anuncia al cerrar la Fase 5. Bases listas para automatización, datos o IA.</div>
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; background: #0D0D1A; border: 1px dashed rgba(255,255,255,0.18);">
+              <div style="width: 36px; height: 36px; border: 1px dashed rgba(244,244,245,0.35); color: rgba(244,244,245,0.4); display: flex; align-items: center; justify-content: center; font-weight: 900;">6</div>
+              <div style="font-weight: 700; font-size: 16.5px; color: rgba(244,244,245,0.55);">Por definir</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.4); line-height: 1.5;">Se anuncia al cerrar la Fase 5. Bases listas para automatización, datos o IA.</div>
             </div>
 
           </div>
         </div>
 
         <!-- CHECKLIST -->
-        <div id="checklist" style="padding: 84px 64px; background: #EAF1FB;">
+        <div id="checklist" style="padding: 84px 64px; background: #16162E; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
           <div style="display: flex; gap: 56px; align-items: center;">
 
             <div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 18px;">
-              <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: #2F5FA8;">Tu progreso</div>
-              <h2 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.5px;">En bloques chicos, no en una lista de 70</h2>
-              <p style="margin: 0; font-size: 16px; color: #4B5468; line-height: 1.55; max-width: 460px;">
+              <div class="eyebrow" style="color: #4B8BBE;">Tu progreso</div>
+              <h2 style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF;">En bloques chicos, no en una lista de 70</h2>
+              <p style="margin: 0; font-size: 15.5px; color: rgba(244,244,245,0.65); line-height: 1.55; max-width: 460px;">
                 Marcás cada logro solo cuando lográs hacerlo sin ayuda externa. Es tu tablero personal,
                 no una nota punitiva — y se guarda solo en tu navegador.
               </p>
-              <div style="align-self: flex-start; margin-top: 6px; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px;" class="btn-blue-outline">Ver mi checklist completo →</div>
+              <div style="align-self: flex-start; margin-top: 6px; padding: 13px 26px; font-size: 13px;" class="btn-outline-green">Ver mi checklist completo →</div>
             </div>
 
-            <div style="flex: 0 0 620px; display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-radius: 18px; background: #1F3E73; color: #FBF8F2;">
+            <div style="flex: 0 0 620px; display: flex; flex-direction: column; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: #0D0D1A;">
                 <div style="display: flex; align-items: center; gap: 12px;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4a1 1 0 0 0-1 1c0 2.5 1.8 4.2 4 4.6M17 6h3a1 1 0 0 1 1 1c0 2.5-1.8 4.2-4 4.6"></path><path d="M12 13v3M9 20h6M10 16.5h4"></path></svg>
-                  <span style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 17px;">0 / 70 logros</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4a1 1 0 0 0-1 1c0 2.5 1.8 4.2 4 4.6M17 6h3a1 1 0 0 1 1 1c0 2.5-1.8 4.2-4 4.6"></path><path d="M12 13v3M9 20h6M10 16.5h4"></path></svg>
+                  <span style="font-weight: 900; font-size: 16px; color: #FFFFFF;">0 / 70 logros</span>
                 </div>
-                <span style="font-size: 13px; color: #A9BBD8;">Se guarda automático</span>
+                <span class="eyebrow" style="font-size: 10.5px; color: rgba(244,244,245,0.4);">Se guarda automático</span>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #D6E2F2;">
+              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #0D0D1A;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <span style="font-size: 14.5px; font-weight: 600;">Bloque 0 — Gestión del Entorno</span>
-                  <span style="font-size: 13px; color: #7C8496;">0 / 7</span>
+                  <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">Bloque 0 — Gestión del Entorno</span>
+                  <span style="font-size: 12.5px; color: rgba(244,244,245,0.45);">0 / 7</span>
                 </div>
-                <div style="height: 8px; border-radius: 999px; background: #EAF1FB; overflow: hidden;"><div style="width: 0%; height: 100%; background: #2F5FA8;"></div></div>
+                <div style="height: 6px; background: rgba(255,255,255,0.08);"><div style="width: 0%; height: 100%; background: #4B8BBE;"></div></div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #D6E2F2;">
+              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #0D0D1A;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <span style="font-size: 14.5px; font-weight: 600;">Bloque 1 — Lógica y Control</span>
-                  <span style="font-size: 13px; color: #7C8496;">0 / 12</span>
+                  <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">Bloque 1 — Lógica y Control</span>
+                  <span style="font-size: 12.5px; color: rgba(244,244,245,0.45);">0 / 12</span>
                 </div>
-                <div style="height: 8px; border-radius: 999px; background: #EAF1FB; overflow: hidden;"><div style="width: 0%; height: 100%; background: #2F5FA8;"></div></div>
+                <div style="height: 6px; background: rgba(255,255,255,0.08);"><div style="width: 0%; height: 100%; background: #4B8BBE;"></div></div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #D6E2F2;">
+              <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #0D0D1A;">
                 <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <span style="font-size: 14.5px; font-weight: 600;">Bloque 2 — Programación Visual</span>
-                  <span style="font-size: 13px; color: #7C8496;">0 / 15</span>
+                  <span style="font-size: 14px; font-weight: 700; color: #FFFFFF;">Bloque 2 — Programación Visual</span>
+                  <span style="font-size: 12.5px; color: rgba(244,244,245,0.45);">0 / 15</span>
                 </div>
-                <div style="height: 8px; border-radius: 999px; background: #EAF1FB; overflow: hidden;"><div style="width: 0%; height: 100%; background: #2F5FA8;"></div></div>
+                <div style="height: 6px; background: rgba(255,255,255,0.08);"><div style="width: 100%; height: 100%; background: #4B8BBE;"></div></div>
               </div>
             </div>
 
@@ -339,24 +339,25 @@
         </div>
 
         <!-- CTA FINAL -->
-        <div style="padding: 90px 64px; background: #1E2433; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
-          <h2 style="margin: 0; font-size: 36px; font-weight: 600; letter-spacing: -0.5px; color: #FBF8F2; max-width: 640px; line-height: 1.25;">¿Por dónde arrancás?</h2>
-          <p style="margin: 0; font-size: 16px; color: #A9B0C0; max-width: 480px; line-height: 1.5;">Es el mismo lugar para dos caminos distintos. Elegí el tuyo y seguí la ruta.</p>
+        <div style="padding: 90px 64px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px;">
+          <div class="eyebrow" style="color: #4B8BBE;">Un solo camino</div>
+          <h2 style="margin: 0; font-size: 34px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF; max-width: 640px; line-height: 1.25;">¿En qué escalón arrancás?</h2>
+          <p style="margin: 0; font-size: 15.5px; color: rgba(244,244,245,0.6); max-width: 480px; line-height: 1.5;">Es la misma ruta y la misma comunidad para los dos. Elegí tu punto de partida y arrancá.</p>
           <div style="display: flex; gap: 18px; margin-top: 8px;">
-            <div style="padding: 15px 30px; border-radius: 999px; font-weight: 600; font-size: 15.5px;" class="btn-yellow">Nunca programé antes</div>
-            <div style="padding: 15px 30px; border-radius: 999px; font-weight: 600; font-size: 15.5px; color: #FBF8F2; border: 2px solid #4B5468;">Ya tengo bases</div>
+            <div style="padding: 15px 30px; font-size: 13.5px;" class="btn-yellow">Nunca programé antes</div>
+            <div style="padding: 15px 30px; font-size: 13.5px;" class="btn-outline-blue">Ya tengo bases</div>
           </div>
         </div>
 
         <!-- FOOTER -->
-        <div style="padding: 48px 64px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <div style="padding: 40px 64px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px; border-radius: 9px; background: #1F3E73; display: flex; align-items: center; justify-content: center;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
+            <div style="width: 28px; height: 28px; background: #FFD43B; display: flex; align-items: center; justify-content: center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0D0D1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
             </div>
-            <span style="font-size: 13.5px; color: #7C8496;">Hoja de Ruta Python · Colombia — el hilo conductor entre todos los repos del track.</span>
+            <span style="font-size: 13px; color: rgba(244,244,245,0.5);">Ruta Python Colombia — parte de la comunidad oficial de Python en Colombia.</span>
           </div>
-          <div style="font-size: 13px; color: #6B6558;">Ruta de formación de acceso abierto</div>
+          <div style="font-size: 12.5px; color: rgba(244,244,245,0.4);">Ruta de formación de acceso abierto</div>
         </div>
 
       </div>
@@ -364,83 +365,86 @@
 
     <!-- ============ MOBILE ============ -->
     <div id="view-mobile" class="frame-mobile">
-      <div style="width: 390px; background: #FBF8F2;">
+      <div style="width: 390px; background: #0D0D1A;">
 
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid #E7E1D3;">
+        <div style="display: flex; height: 4px;">
+          <div style="flex: 1; background: #E24329;"></div>
+          <div style="flex: 1; background: #F58220;"></div>
+          <div style="flex: 1; background: #FFD43B;"></div>
+          <div style="flex: 1; background: #2FB350;"></div>
+          <div style="flex: 1; background: #4B8BBE;"></div>
+          <div style="flex: 1; background: #5C4EE5;"></div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="width: 34px; height: 34px; border-radius: 10px; background: #1F3E73; display: flex; align-items: center; justify-content: center;">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
+            <div style="width: 32px; height: 32px; background: #FFD43B; display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D0D1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"></polyline><polyline points="17 8 21 12 17 16"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
             </div>
-            <div style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 16px;">Ruta Python</div>
+            <div style="font-weight: 700; font-size: 15px;">Ruta <span style="color: #4B8BBE;">Python</span></div>
           </div>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E2433" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4F4F5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 20px; padding: 36px 20px 40px;">
-          <div style="display: inline-flex; align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #EAF1FB; color: #2F5FA8; font-size: 12px; font-weight: 600; text-transform: uppercase;">Ruta · Colombia</div>
-          <h1 style="margin: 0; font-size: 32px; line-height: 1.12; font-weight: 700; letter-spacing: -0.5px;">Programar no es solo para programadores.</h1>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #4B5468;">Una ruta guiada, paso a paso, para aprender Python desde cero. Sin jerga, sin perderte.</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; padding: 34px 20px 36px;">
+          <div class="eyebrow" style="color: #FFD43B;">Comunidad Python Colombia</div>
+          <h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF;">Programar no es solo para programadores.</h1>
+          <div style="font-size: 18px; font-weight: 700; color: #4B8BBE;">Tu punto de entrada a la comunidad.</div>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: rgba(244,244,245,0.7);">Una sola ruta, de cero a profesional. Elegí en qué escalón arrancás.</p>
 
-          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
-            <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 18px; background: #FFF6DF; border: 2px solid #F6C445;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9860C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><circle cx="12" cy="17" r="0.6" fill="#B9860C" stroke="none"></circle></svg>
-              <div style="font-weight: 600; font-size: 16px;">Nunca programé antes</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.4;">Arrancás desde cero, sin miedo a la pantalla negra.</div>
-              <div style="align-self: flex-start; margin-top: 2px; padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px;" class="btn-yellow">Empezar mi ruta →</div>
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 6px;">
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; background: #16162E; border: 1px solid rgba(255,212,59,0.4); border-top: 3px solid #FFD43B;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><circle cx="12" cy="17" r="0.6" fill="#FFD43B" stroke="none"></circle></svg>
+              <div style="font-weight: 700; font-size: 15px; color: #FFFFFF;">Nunca programé antes</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.4;">Arrancás en el escalón cero, sin miedo a la pantalla negra.</div>
+              <div style="align-self: flex-start; margin-top: 2px; padding: 10px 18px; font-size: 12.5px;" class="btn-yellow">Empezar mi ruta →</div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 18px; background: #EAF1FB; border: 2px solid #BBD3EF;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F5FA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 2 4.5 5.2 4.5 9 0 2.2-.6 4-1.5 5.4L12 21l-3-4.1c-.9-1.4-1.5-3.2-1.5-5.4 0-3.8 1.7-7 4.5-9Z"></path><circle cx="12" cy="10.5" r="2.2"></circle></svg>
-              <div style="font-weight: 600; font-size: 16px;">Ya tengo bases</div>
-              <div style="font-size: 14px; color: #4B5468; line-height: 1.4;">Saltás directo a tu fase y seguís avanzando.</div>
-              <div style="align-self: flex-start; margin-top: 2px; padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px;" class="btn-blue-outline">Ver las fases →</div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; background: #16162E; border: 1px solid rgba(75,139,190,0.4); border-top: 3px solid #4B8BBE;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4B8BBE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.8 2 4.5 5.2 4.5 9 0 2.2-.6 4-1.5 5.4L12 21l-3-4.1c-.9-1.4-1.5-3.2-1.5-5.4 0-3.8 1.7-7 4.5-9Z"></path><circle cx="12" cy="10.5" r="2.2"></circle></svg>
+              <div style="font-weight: 700; font-size: 15px; color: #FFFFFF;">Ya tengo bases</div>
+              <div style="font-size: 13.5px; color: rgba(244,244,245,0.6); line-height: 1.4;">Entrás más arriba en la misma escalera.</div>
+              <div style="align-self: flex-start; margin-top: 2px; padding: 10px 18px; font-size: 12.5px;" class="btn-outline-blue">Ver las fases →</div>
             </div>
-          </div>
-        </div>
-
-        <div style="margin: 0 20px 40px; border-radius: 22px; background: #1F3E73; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 18px 36px rgba(31,62,115,0.25);">
-          <div style="display: flex; align-items: center; gap: 10px; color: #FBF8F2;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
-            <span style="font-weight: 600; font-size: 14px;">Playground Python</span>
-          </div>
-          <div style="background: #16294A; border-radius: 12px; padding: 16px; font-family: monospace; font-size: 12.5px; line-height: 1.7; color: #D7E3F5;">
-            <div><span style="color: #8AB4F0;">frutas</span> = [<span style="color: #F6C445;">"manzana"</span>, <span style="color: #F6C445;">"pera"</span>]</div>
-            <div style="color: #7C93B8;">print(frutas[0])</div>
-          </div>
-          <div style="font-size: 12.5px; color: #A9BBD8; line-height: 1.5;">Corre en tu navegador. Sin instalar nada.</div>
-        </div>
-
-        <div style="padding: 0 20px 44px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: #2F5FA8;">Por qué así</div>
-          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7E1D3;">
-            <div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: #EAF1FB; display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F5FA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="10 8.5 16 12 10 15.5 10 8.5"></polygon></svg>
-            </div>
-            <div style="font-size: 14px; font-weight: 500; line-height: 1.4;">Aprendés haciendo: proyectos desde el día 1.</div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7E1D3;">
-            <div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: #FFF6DF; display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9860C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><line x1="10.2" y1="17" x2="13.8" y2="17"></line></svg>
-            </div>
-            <div style="font-size: 14px; font-weight: 500; line-height: 1.4;">Ejemplos visuales antes que teoría.</div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7E1D3;">
-            <div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: #F6E9E2; display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B85C3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polygon points="12 7 14 12 12 17 10 12 12 7"></polygon></svg>
-            </div>
-            <div style="font-size: 14px; font-weight: 500; line-height: 1.4;">Sirve para cualquier profesión, no solo IT.</div>
           </div>
         </div>
 
-        <div style="margin: 0 20px 44px; padding: 20px; border-radius: 18px; background: #1F3E73; color: #FBF8F2; display: flex; align-items: center; justify-content: space-between;">
+        <div style="margin: 0 20px 36px; background: #16162E; border: 1px solid rgba(255,255,255,0.1); padding: 20px; display: flex; flex-direction: column; gap: 12px;">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6C445" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M12 13v3M9 20h6"></path></svg>
-            <span style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px;">0 / 70 logros</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2FB350" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+            <span class="eyebrow" style="font-size: 12px;">Playground Python</span>
           </div>
-          <span style="font-size: 12px; color: #A9BBD8;">→</span>
+          <div style="background: #0D0D1A; border: 1px solid rgba(255,255,255,0.08); padding: 14px; font-family: monospace; font-size: 12px; line-height: 1.6; color: #D7E3F5;">
+            <div><span style="color: #4B8BBE;">frutas</span> = [<span style="color: #FFD43B;">"manzana"</span>, <span style="color: #FFD43B;">"pera"</span>]</div>
+            <div style="color: rgba(244,244,245,0.5);">print(frutas[0])</div>
+          </div>
+          <div style="font-size: 12px; color: rgba(244,244,245,0.5); line-height: 1.5;">Corre en tu navegador. Sin instalar nada.</div>
         </div>
 
-        <div style="padding: 24px 20px 40px; text-align: center; font-size: 12.5px; color: #6B6558;">
-          Hoja de Ruta Python · Colombia
+        <div style="display: flex; flex-direction: column; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); margin: 0 20px 36px;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #16162E;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B8BBE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="9"></circle><polygon points="10 8.5 16 12 10 15.5 10 8.5"></polygon></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.4;">Aprendés haciendo: proyectos desde el día 1.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #16162E;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9.5 9.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.1-.7 1.7-1.5 2.3-.6.5-1 .9-1 1.7"></path><line x1="10.2" y1="17" x2="13.8" y2="17"></line></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.4;">Ejemplos visuales antes que teoría.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #16162E;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C4EE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="9"></circle><polygon points="12 7 14 12 12 17 10 12 12 7"></polygon></svg>
+            <div style="font-size: 13.5px; font-weight: 500; line-height: 1.4;">Sirve para cualquier profesión, no solo IT.</div>
+          </div>
+        </div>
+
+        <div style="margin: 0 20px 36px; padding: 18px; background: #16162E; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFD43B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M12 13v3M9 20h6"></path></svg>
+            <span style="font-weight: 900; font-size: 14px; color: #FFFFFF;">0 / 70 logros</span>
+          </div>
+          <span style="font-size: 12px; color: rgba(244,244,245,0.4);">→</span>
+        </div>
+
+        <div style="padding: 22px 20px 36px; text-align: center; font-size: 12px; color: rgba(244,244,245,0.4); border-top: 1px solid rgba(255,255,255,0.1);">
+          Ruta Python Colombia — comunidad oficial
         </div>
 
       </div>
